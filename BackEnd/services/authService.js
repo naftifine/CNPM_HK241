@@ -2,10 +2,10 @@ const authModel = require('../models/authModel');
 
 const login = (bknetid, password, callback) => {
   if (!bknetid || !password) {
-    return callback({ status: 400, message: 'bknetid and password are required' }, null);
+    return callback({ status: 400, message: 'Vui lòng nhập BKNetID và mật khẩu.' }, null);
   }
 
-  authModel.findUserByCredentials(bknetid, password, (err, results) => {
+  authModel.findUserByBKNetID(bknetid, password, (err, results) => {
     if (err) {
       return callback({ status: 500, message: 'Internal server error' }, null);
     }
@@ -15,7 +15,7 @@ const login = (bknetid, password, callback) => {
       return callback(null, { success: true, student_id, name });
     } 
     else {
-      return callback({ status: 403, message: 'Invalid credentials' }, null);
+      return callback({ status: 403, message: 'Sai BKNetID hoặc mật khẩu.' }, null);
     }
   });
 };
