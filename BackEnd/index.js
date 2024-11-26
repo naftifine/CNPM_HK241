@@ -4,17 +4,14 @@ const app = express();
 const PORT = 3001;
 
 const db = require("./db");
-const loginService = require('./services/loginService');
 
+const authRoutes = require('./routes/authRoute');
 
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('nig nig nig nig nig nig nig nig nig nig nig');
-});
+// app.get('/login', loginService);
 
-app.get('/login', loginService);
-
+app.get('/login', authRoutes); 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
