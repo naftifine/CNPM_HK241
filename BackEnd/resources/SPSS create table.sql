@@ -31,7 +31,7 @@ CREATE TABLE print_history (
     FOREIGN KEY (student_id) REFERENCES student(student_id) ON DELETE CASCADE,
     FOREIGN KEY (printer_id) REFERENCES printer(printer_id) ON DELETE CASCADE
 );
-CREATE TABLE Purchase (
+CREATE TABLE purchase (
     purchase_id VARCHAR(20) PRIMARY KEY,
     student_id VARCHAR(20) NOT NULL,
     number_of_pages INT NOT NULL,
