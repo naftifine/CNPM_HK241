@@ -1,14 +1,18 @@
 const userService = require('../services/userService');
 
-const getUserInfo = async (req, res) => {
+const getUserInfo = (req, res) => {
     const { student_id } = req.query;
 
     if (!student_id) {
         return res.status(400).json({ error: 'student_id là bắt buộc' });
     }
 
-    try {
-        const userInfo = await userService.getUserInfo(student_id);
+    userService.getUserInfo(student_id, (err, userInfo) => {
+        if (err) {
+            console.error('Error in getUserInfo:', err);
+            return res.status(500).json({ error: 'Lỗi server' });
+        }
+
         const response = {
             student_id: userInfo.user.student_id,
             name: userInfo.user.name,
@@ -18,10 +22,7 @@ const getUserInfo = async (req, res) => {
         };
 
         res.status(200).json(response);
-    } catch (err) {
-        console.error('Error in getUserInfo:', err);
-        res.status(500).json({ error: 'Lỗi server' });
-    }
+    });
 };
 
 module.exports = { getUserInfo };

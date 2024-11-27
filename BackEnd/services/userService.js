@@ -5,32 +5,35 @@ function convertToA4Pages(pageSize, numberOfPages) {
         case 'A3':
             return numberOfPages * 2;
         case 'A2':
-            return numberOfPages * 4; 
+            return numberOfPages * 4;
         case 'A1':
-            return numberOfPages * 8; 
+            return numberOfPages * 8;
         case 'A0':
-            return numberOfPages * 16; 
+            return numberOfPages * 16;
         default:
             return numberOfPages;
     }
 }
-const getUserInfo = async (student_id) => {
-    try {
-        const user = await userModel.getUserById(student_id);
+
+const getUserInfo = (student_id, callback) => {
+    userModel.getUserById(student_id, (err, user) => {
+        if (err) return callback(err);
 
         if (!user) {
-            throw new Error('Không tìm thấy người dùng');
+            return callback(new Error('Không tìm thấy người dùng'));
         }
 
-        const printHistory = await userModel.getPrintHistoryByUserId(student_id);
-        let printed_pages = 0;
-        printHistory.forEach(printRecord => {
-            printed_pages += convertToA4Pages(printRecord.page_size, printRecord.number_of_pages);
-        });
+        userModel.getPrintHistoryByUserId(student_id, (err, printHistory) => {
+            if (err) return callback(err);
 
-        return { user, printed_pages: printed_pages };
-    } catch (err) {
-        throw err;
-    }
+            let printed_pages = 0;
+            printHistory.forEach(printRecord => {
+                printed_pages += convertToA4Pages(printRecord.page_size, printRecord.number_of_pages);
+            });
+
+            callback(null, { user, printed_pages });
+        });
+    });
 };
+
 module.exports = { getUserInfo };
