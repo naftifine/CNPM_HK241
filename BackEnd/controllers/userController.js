@@ -1,6 +1,6 @@
 const userService = require('../services/userService');
 
-exports.getUserInfo = async (req, res) => {
+const getUserInfo = async (req, res) => {
     const { student_id } = req.query;
 
     if (!student_id) {
@@ -23,3 +23,5 @@ exports.getUserInfo = async (req, res) => {
         res.status(500).json({ error: 'Lỗi server' });
     }
 };
+
+module.exports = { getUserInfo };

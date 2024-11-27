@@ -14,8 +14,7 @@ function convertToA4Pages(pageSize, numberOfPages) {
             return numberOfPages;
     }
 }
-
-exports.getUserInfo = async (student_id) => {
+const getUserInfo = async (student_id) => {
     try {
         const user = await userModel.getUserById(student_id);
 
@@ -34,3 +33,4 @@ exports.getUserInfo = async (student_id) => {
         throw err;
     }
 };
+module.exports = { getUserInfo };
