@@ -6,6 +6,7 @@ CREATE TABLE student (
 	remaining_pages INT DEFAULT 0,
 	bknetid VARCHAR(255) UNIQUE NOT NULL,
 	password VARCHAR(255) NOT NULL,
+    major VARCHAR(255) NOT NULL,
 );
 
 CREATE TABLE printer (
