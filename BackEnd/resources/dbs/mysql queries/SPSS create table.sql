@@ -3,10 +3,10 @@ USE HCMUT_SPSS;
 CREATE TABLE student (
 	student_id VARCHAR(20) PRIMARY KEY,
 	name VARCHAR(255) NOT NULL,
+    major VARCHAR(255) NOT NULL,
 	remaining_pages INT DEFAULT 0,
 	bknetid VARCHAR(255) UNIQUE NOT NULL,
 	password VARCHAR(255) NOT NULL,
-    major VARCHAR(255) NOT NULL,
 );
 
 CREATE TABLE printer (
@@ -38,4 +38,9 @@ CREATE TABLE purchase (
     number_of_pages INT NOT NULL,
     date DATE NOT NULL,
     FOREIGN KEY (student_id) REFERENCES student(student_id) ON DELETE CASCADE
+);
+
+CREATE TABLE config (
+    default_pages INT NOT NULL,
+    page_price INT NOT NULL
 );
