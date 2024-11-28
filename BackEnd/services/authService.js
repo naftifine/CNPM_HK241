@@ -18,13 +18,7 @@ const login = (bknetid, password, callback) => {
           return callback({ status: 403, message: 'Sai BKNetID hoặc mật khẩu.' }, null);
       }
   });
-  authModel.updateLastLogin(bknetid, (err, result) => {
-    if (err) {
-      console.error('Error updating last login:', err);
-    } else {
-      console.log('Last login updated successfully');
-    }
-  });
+  authModel.updateLastLogin(bknetid, (err, result) => {});
 };
 
 module.exports = { login };
