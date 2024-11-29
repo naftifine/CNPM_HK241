@@ -7,12 +7,15 @@ const PORT = 3001;
 
 const authRoutes = require('./routes/authRoute');
 const userRoutes = require('./routes/userRoute');
+
 const thirdPartyRoutes = require('./routes/thirdPartyRoute'); 
+
 
 app.use(cors());
 
 app.get('/login', authRoutes); 
 app.get('/info', userRoutes);
+
 app.use(express.json());
 app.use('/hcmutSPSS', thirdPartyRoutes); // use -> handle POST, GET,...
 
