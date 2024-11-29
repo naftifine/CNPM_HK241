@@ -1,0 +1,77 @@
+.right .featured {
+    display: flex;
+    position: relative;
+    padding: 5px 10px;
+    border: 2px solid #000;
+    font-size: 24px;
+    font-style: "Josefin Sans";
+    font-weight: 300;
+    width: 500px;
+    height: 35px;
+    margin-left: 1165px;
+    
+    gap: 50px;
+}
+.featured .icon__item {
+    margin-top: 5px;
+    float: right;
+}
+.size {
+    overflow: hidden; /* Giúp ẩn nội dung khi nó không hiển thị */
+}
+
+.right .slide-enter {
+    max-height: 0;
+    opacity: 0;
+    transition:
+        max-height 300ms ease-in,
+        opacity 300ms ease-in;
+}
+
+.right .slide-enter-active {
+    max-height: 300px; /* Hoặc giá trị lớn hơn tùy thuộc vào nội dung của bạn */
+    opacity: 1;
+}
+
+.right .slide-exit {
+    // max-height: 100px; /* Hoặc giá trị lớn hơn tùy thuộc vào nội dung của bạn */
+    opacity: 1;
+    transition:
+        max-height 300ms ease-out,
+        opacity 300ms ease-out;
+}
+
+.right .slide-exit-active {
+    max-height: 0;
+    opacity: 0;
+}
+.right .item__icon {
+    float: right;
+}
+/* OPTION */
+.choose {
+    position: absolute;
+    margin-left: 1165px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 190px;
+    height: 140px;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    z-index: 2;
+    p {
+        margin: 10px 0;
+        align-items: center;
+        cursor: pointer;
+        font-size: 23px;
+        font-style: "Josefin Sans";
+        font-weight: 300;
+        &:hover {
+            color: #cfb38c;
+        }
+    }
+}
+
+.regular {
+    font-weight: normal;
+}

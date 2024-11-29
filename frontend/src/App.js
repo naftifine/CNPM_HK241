@@ -1,5 +1,12 @@
+
+import React, { useEffect, useState } from 'react';
+
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import PrinterManage from './pages/printerManage.js';
+
 
 function App() {
   return (
@@ -19,7 +26,15 @@ function App() {
         </a>
       </header>
     </div>
+
+    // <BrowserRouter>
+    //   <Routes>
+    //     {/* <Route path="/" element={<PrinterManage/>} /> */}
+
+    //   </Routes>
+    // </BrowserRouter>
+
   );
-}
+};
 
 export default App;

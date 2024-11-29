@@ -1,0 +1,114 @@
+.printer-manage {
+    text-align: center;
+    // font-family: Arial, sans-serif;
+
+    .navbar {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+}
+
+.printer-banner {
+    display: flex; /* Đặt flexbox */
+    flex-direction: row; /* Sắp xếp các phần tử theo hàng ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Đảm bảo các phần tử được phân bố đều */
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0px auto;
+    max-width: 1290px;
+    height: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    background-color: #F1ECEC;
+
+    &:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .printer-icon {
+        font-size: 36px;
+        color: black;
+        margin-right: 20px;
+    }
+
+    .printer-details {
+        display: flex; /* Đặt flexbox để các phần tử nằm trên cùng một dòng */
+        flex-direction: row; /* Các phần tử con nằm trên cùng một hàng */
+        gap: 300px; /* Khoảng cách giữa các phần tử */
+        text-align: center;
+
+        .printer-code, .printer-name, .printer-location, .printer-status {
+            flex-grow: 1; 
+            min-width: 0;
+            // left: 82px;
+            
+            font-family: 'Lato';
+            font-size: 20px;
+            font-weight: normal;
+            font-style: normal;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+       
+
+
+        .printer-code {
+            font-weight: bold;
+        }
+
+        .printer-status {
+            font-weight: bold;
+
+            &.ready {
+                color: green;
+            }
+
+            &.not-ready {
+                color: red;
+            }
+        }
+    }
+}
+.container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc (tuỳ chọn nếu cần) */
+    height: 300px;           /* Chiều cao của container bằng 100% chiều cao của viewport */
+
+    
+
+    .button {
+        margin: 100px;
+        left: 50%;
+        width: 334px; 
+        height: 55px;
+        background: #ADD2E0;
+        border: 1px solid #000;
+        border-radius: 15px;
+        /* Button */
+
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 38px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        color: #000000;
+
+        /* Tối ưu hơn: box-sizing: border-box chỉ cần thiết khi cần đảm bảo chiều rộng và chiều cao của phần tử bao gồm cả border và padding */
+        box-sizing: border-box; 
+        &:hover {
+            background-color: #A4B1B6;
+        }
+    }
+}
+
+/* Group 34 */
