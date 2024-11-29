@@ -14,7 +14,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/get-qr', {
+      const response = await axios.post('http://localhost:3002/get-qr', {
         userId: userId,
         amount: amount,
       });
