@@ -75,9 +75,9 @@
 }
 .container {
     display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center;     /* Căn giữa theo chiều dọc (tuỳ chọn nếu cần) */
-    height: 300px;           /* Chiều cao của container bằng 100% chiều cao của viewport */
+    justify-content: center; 
+    align-items: center;     
+    height: 300px;          
 
     
 
@@ -89,7 +89,7 @@
         background: #ADD2E0;
         border: 1px solid #000;
         border-radius: 15px;
-        /* Button */
+        
 
         font-family: 'Lato';
         font-style: normal;
@@ -103,7 +103,7 @@
 
         color: #000000;
 
-        /* Tối ưu hơn: box-sizing: border-box chỉ cần thiết khi cần đảm bảo chiều rộng và chiều cao của phần tử bao gồm cả border và padding */
+       
         box-sizing: border-box; 
         &:hover {
             background-color: #A4B1B6;
@@ -111,4 +111,4 @@
     }
 }
 
-/* Group 34 */
+
