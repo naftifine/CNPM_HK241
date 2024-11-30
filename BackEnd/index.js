@@ -15,7 +15,7 @@ const thirdPartyRoutes = require('./routes/thirdPartyRoute');
 app.use(cors());
 
 app.get('/login', authRoutes); 
-app.get('/info', userRoutes);
+app.get('/profile', userRoutes);
 
 app.put('/config/default-pages', configRoutes);
 app.put('/config/page-price', configRoutes);
