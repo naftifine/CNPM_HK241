@@ -2,10 +2,11 @@ import React from 'react';
 import './PrinterManage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
-import SearchBar from "../components/SearchBar/SearchBar";
+import SearchBar from '../../components/SearchBar/SearchBar';
 import { useState } from 'react';
-import FilterBar from '../components/FilterBar/FilterBar';
-
+import FilterBar from '../../components/FilterBar/FilterBar';
+import FilterBarTime from '../../components/FilterBarTime/FilterBarTime';
+import NavbarLogin from '../../components/SPSO/NavbarLogin/NavbarLogin';
 const PrinterBanner = ({ printerCode, printerName, printerLocation, printerStatus }) => (
     <div className="printer-banner">
         <FontAwesomeIcon icon={faPrint} className="printer-icon" />
@@ -23,41 +24,45 @@ const PrinterBanner = ({ printerCode, printerName, printerLocation, printerStatu
 
 function PrinterManage() {
     const [displayText, setDisplayText] = useState("");
-    
+
 
     return (
-        <div className="printer-manage">
-            <h1 className="navbar">Navbar</h1>
-            <FilterBar/>
+        <>
+            <NavbarLogin />
+            <FilterBar />
             <SearchBar setDisplayText={setDisplayText} />
-            <PrinterBanner
-                printerCode="555666"
-                printerName="ABCD"
-                printerLocation="Sảnh H6"
-                printerStatus="Sẵn sàng"
-            />
-            <PrinterBanner
-                printerCode="555666"
-                printerName="ABCD"
-                printerLocation="Sảnh H6"
-                printerStatus="Sẵn sàng"
-            />
-            <PrinterBanner
-                printerCode="555666"
-                printerName="ABCD"
-                printerLocation="Sảnh H6"
-                printerStatus="Sẵn sàng"
-            />
-            <PrinterBanner
-                printerCode="555666"
-                printerName="ABCD"
-                printerLocation="Sảnh H6"
-                printerStatus="Không sẵn sàng"
-            />
-            <div className="container">
-                <button className="button">Thêm máy in</button>
+            <FilterBarTime />
+            <div className="printer-manage">
+                <PrinterBanner
+                    printerCode="555666"
+                    printerName="ABCD"
+                    printerLocation="Sảnh H6"
+                    printerStatus="Sẵn sàng"
+                />
+                <PrinterBanner
+                    printerCode="555666"
+                    printerName="ABCD"
+                    printerLocation="Sảnh H6"
+                    printerStatus="Sẵn sàng"
+                />
+                <PrinterBanner
+                    printerCode="555666"
+                    printerName="ABCD"
+                    printerLocation="Sảnh H6"
+                    printerStatus="Sẵn sàng"
+                />
+                <PrinterBanner
+                    printerCode="555666"
+                    printerName="ABCD"
+                    printerLocation="Sảnh H6"
+                    printerStatus="Máy bận"
+                />
+                <div className="containerButton">
+                    <button className='buttonAdd'>Thêm máy in</button>
+                </div>
             </div>
-        </div>
+        </>
+
     );
 }
 
