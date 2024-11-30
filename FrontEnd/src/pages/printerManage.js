@@ -6,6 +6,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import { useState } from 'react';
 import FilterBar from '../components/FilterBar/FilterBar';
 import NavbarLogin from '../components/HCMUT/NavbarLogin/NavbarLogin';
+import FilterBarTime from '../components/FilterBarTime/FilterBarTime';
 
 const PrinterBanner = ({ printerCode, printerName, printerLocation, printerStatus }) => (
     <div className="printer-banner">
@@ -31,6 +32,7 @@ function PrinterManage() {
             <NavbarLogin />
             <FilterBar />
             <SearchBar setDisplayText={setDisplayText} />
+            <FilterBarTime />
             <div className="printer-manage">
 
 

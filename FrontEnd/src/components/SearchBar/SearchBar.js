@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SearchBar({ setDisplayText }) {
   const [searchValue, setSearchValue] = useState("");
@@ -14,7 +14,7 @@ function SearchBar({ setDisplayText }) {
 
   return (
     <div className="search-bar">
-      <FontAwesomeIcon icon="fas fa-search" className="search-icon" />
+      <FontAwesomeIcon icon={faMagnifyingGlass} />
       <input
         type="text"
         placeholder="Tìm kiếm..."

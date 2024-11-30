@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import styles from './FilterBar.scss';
+import styles from "./FilterBarTime.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSTransition } from 'react-transition-group';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
-export default function FilterBar() {
+
+export default function FilterBarTime() {
     const [openDiv, setOpenDiv] = useState(null);
     const [selectedOption, setSelectedOption] = useState('Tất cả');
 
@@ -14,12 +15,12 @@ export default function FilterBar() {
     };
     return (
         <>
-            <div className="featured" onClick={() => handleFeaturedClick(0, selectedOption)}>
+            <div className="featured_time" onClick={() => handleFeaturedClick(0, selectedOption)}>
                 {selectedOption}
                 {openDiv === 0 ? (
-                    <FontAwesomeIcon className="icon__item" icon={faChevronUp} />
+                    <FontAwesomeIcon className="icon__item_time" icon={faChevronUp} />
                 ) : (
-                    <FontAwesomeIcon className="icon__item" icon={faChevronDown} />
+                    <FontAwesomeIcon className="icon__item_time" icon={faChevronDown} />
                 )}
             </div>
             <CSSTransition
@@ -33,10 +34,9 @@ export default function FilterBar() {
                 }}
                 unmountOnExit
             >
-                <div className="choose">
+                <div className="choose_time">
                     <p onClick={() => handleFeaturedClick(0, 'Tất cả')}>Tất cả</p>
-                    <p onClick={() => handleFeaturedClick(0, 'Cơ sở 1')}>Cơ sở 1</p>
-                    <p onClick={() => handleFeaturedClick(0, 'Cơ sở 2')}>Cơ sở 2</p>
+                    <p onClick={() => handleFeaturedClick(0, 'Cũ hơn')}>Cũ hơn</p>
                 </div>
             </CSSTransition>
             <div />
