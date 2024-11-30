@@ -34,7 +34,16 @@ app.post('/get-qr', (req, res) => {
       }
       const base64Image = `data:image/jpeg;base64,${data.toString('base64')}`;
       res.send(base64Image);
-      pendingUpdates.push({ userId, amount });
+
+      const timeoutId = setTimeout(() => {
+        const updateIndex = pendingUpdates.findIndex(update => update.userId === userId);
+        if (updateIndex !== -1) {
+          pendingUpdates.splice(updateIndex, 1);
+          console.log(`Transaction for userId: ${userId} has been cancelled after 5 minutes`);
+        }
+      }, 300000); // 5 minutes in milliseconds
+
+      pendingUpdates.push({ userId, amount, timeoutId });
       console.log(`Pending update added for userId: ${userId}, amount: ${amount}`);
     });
   } else {
@@ -65,6 +74,8 @@ function waitForInput() {
     if (updateIndex !== -1) {
       const data = JSON.stringify({ student_id: studentId, n: amount });
       const signature = createSignature(data);
+
+      clearTimeout(pendingUpdates[updateIndex].timeoutId);
 
       axios.post('http://localhost:3001/hcmutSPSS/pay', {
         student_id: studentId,

@@ -26,8 +26,8 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PrinterManage/>} />
-        
+        <Route path="/" element={<PrinterManage />} />
+
       </Routes>
     </BrowserRouter>
   );

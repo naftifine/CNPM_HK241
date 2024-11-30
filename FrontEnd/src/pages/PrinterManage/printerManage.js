@@ -2,9 +2,9 @@ import React from 'react';
 import './PrinterManage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar from "../components/SearchBar/SearchBar";
 import { useState } from 'react';
-import FilterBar from '../../components/FilterBar/FilterBar';
+import FilterBar from '../components/FilterBar/FilterBar';
 
 const PrinterBanner = ({ printerCode, printerName, printerLocation, printerStatus }) => (
     <div className="printer-banner">
