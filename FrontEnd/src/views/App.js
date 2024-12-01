@@ -15,15 +15,14 @@ function App() {
         {/* <Route path="/" element={<Hcmut_spso />} />
         <Route path="/homestudent" element={<Main_hcmut />} />
         <Route path="/profile" element={<Inforstudent />} />
-
+        <Route path="/print" element={<Choose_file />} />
         <Route path="/homespso" element={<Main_spso />} />
         <Route path="/printermanage" element={<PrinterManage />} />
         <Route path="/inforprinter/:printerid" element={<InfoPrinter />} /> */}
         <Route path="/Report" element={<Report />} />
       </Routes>
     </Router>
-
-  );
+  )
 }
 
 export default App;

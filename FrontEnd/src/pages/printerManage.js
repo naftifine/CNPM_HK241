@@ -1,12 +1,12 @@
 import React from 'react';
-import style from './PrinterManage.module.scss';
+import style from '../styles/PrinterManage.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
-import SearchBar from '../../components/SearchBar/SearchBar';
+import SearchBar from '../components/SearchBar/SearchBar';
 import { useState } from 'react';
 import FilterBar from '../components/FilterBar/FilterBar';
 import FilterBarTime from '../components/FilterBar/FilterBarTime';
-import NavbarLogin from '../components/Navbar/NavbarSPSO';
+import NavbarSPSO from '../components/Navbar/NavbarSPSO';
 import { useNavigate } from "react-router-dom";
 
 function PrinterBanner({ printerCode, printerName, printerLocation, printerStatus }) {
@@ -33,11 +33,10 @@ function PrinterBanner({ printerCode, printerName, printerLocation, printerStatu
 
 function PrinterManage() {
     const [displayText, setDisplayText] = useState("");
-    const navigate = useNavigate();
 
     return (
         <>
-            <NavbarLogin />
+            <NavbarSPSO />
             <FilterBar />
             <SearchBar setDisplayText={setDisplayText} />
             <FilterBarTime />
