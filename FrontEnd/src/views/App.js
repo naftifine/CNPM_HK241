@@ -25,7 +25,7 @@ function App() {
         {/* <Route path="/" element={<Hcmut_spso />} />
         <Route path="/homestudent" element={<Main_hcmut />} />
         <Route path="/profile" element={<Inforstudent />} />
-        <Route path="/print" element={<Choose_file />} />
+        <Route path="/print" element={< Choose_file />} />
         <Route path="/history" element={<History_print />} />
         <Route path="/homespso" element={<Main_spso />} />
         <Route path="/printmanage" element={<ManagePrintFormat />} />
