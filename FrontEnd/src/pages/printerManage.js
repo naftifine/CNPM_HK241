@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import { useState } from 'react';
-import FilterBar from '../../components/FilterBar/FilterBar';
-import FilterBarTime from '../../components/FilterBarTime/FilterBarTime';
-import NavbarLogin from '../../components/SPSO/NavbarLogin/NavbarLogin';
+import FilterBar from '../components/FilterBar/FilterBar';
+import FilterBarTime from '../components/FilterBar/FilterBarTime';
+import NavbarLogin from '../components/Navbar/NavbarSPSO';
 import { useNavigate } from "react-router-dom";
 
 function PrinterBanner({ printerCode, printerName, printerLocation, printerStatus }) {
@@ -29,9 +29,6 @@ function PrinterBanner({ printerCode, printerName, printerLocation, printerStatu
         </div>
     )
 }
-
-
-
 
 
 function PrinterManage() {

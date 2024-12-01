@@ -1,14 +1,14 @@
 import React from "react";
-import "../Report.scss";
+import styles from "../styles/Report.module.scss";
 
-const Report = () => {
+function Report () {
   return (
-    <div className="report-container">
-      <div className="header">
+    <div className={styles.report_container}>
+      <div className={styles.header}>
         <h1>Báo cáo</h1>
       </div>
 
-      <div className="filters">
+      <div className={styles.filters}>
         <div>
           <label>Tất cả</label>
         </div>
@@ -30,18 +30,18 @@ const Report = () => {
         </div>
       </div>
 
-      <div className="statistics">
-        <div className="stat-box">
+      <div className={styles.statistics}>
+        <div className={styles.stat_box}>
           <h3>DOANH THU</h3>
           <p>12,565,054 VNĐ</p>
         </div>
-        <div className="stat-box">
+        <div className={styles.stat_box}>
           <h3>SỐ TRANG ĐÃ IN</h3>
           <p>1024</p>
         </div>
       </div>
 
-      <div className="machine-usage">
+      <div className={styles.machine_usage}>
         <h3>THỐNG KÊ MÁY IN ĐƯỢC SỬ DỤNG NHIỀU NHẤT</h3>
         <table>
           <thead>
@@ -76,21 +76,21 @@ const Report = () => {
         </table>
       </div>
 
-      <div className="machine-status">
+      <div className={styles.machine_status}>
         <h3>Tỷ lệ máy in đang hoạt động là: 90%</h3>
-        <div className="status">
-          <div className="status-box">
+        <div className={styles.status}>
+          <div className={styles.status_box}>
             <h4>Đang hoạt động</h4>
             <p>50</p>
           </div>
-          <div className="status-box">
+          <div className={styles.status_box}>
             <h4>Không hoạt động</h4>
             <p>5</p>
           </div>
         </div>
       </div>
 
-      <button className="print-button">In báo cáo</button>
+      <button className={styles.print_button}>In báo cáo</button>
     </div>
   );
 };
