@@ -23,7 +23,7 @@ function Info() {
                     <input type="text" id="machineName" value={printerid} />
 
                     <label htmlFor="machineModel" className={styles.label}>Dòng máy:</label>
-                    <select id="machineModel" value='1'>
+                    <select id="machineModel" >
                         <option value="" >Chọn dòng máy</option>
                         <option value="1" >1</option>
                         <option value="2" >2</option>
@@ -31,14 +31,14 @@ function Info() {
                     </select>
 
                     <label htmlFor="branch" className={styles.label}>Cơ sở:</label>
-                    <select id="branch" value="1">
+                    <select id="branch">
                         <option value="">Chọn cơ sở</option>
                         <option value="1">Cơ sở 1</option>
                         <option value="2">Cơ sở 2</option>
                     </select>
 
                     <label htmlFor="location" className={styles.label}>Vị trí:</label>
-                    <select id="location" value="H3">
+                    <select id="location" >
                         <option value="" >Chọn vị trí</option>
                         <option value="H6">Sảnh H6</option>
                         <option value="H2">Sảnh H2</option>
