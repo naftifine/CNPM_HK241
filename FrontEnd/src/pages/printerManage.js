@@ -42,6 +42,7 @@ function PrinterManage() {
             <div className={style.searchbar}>
                 <SearchBar />
             </div>
+
             <FilterBarTime />
             <h1 className={style.title}> DANH SÁCH MÁY IN</h1>
             <div className={style.printer_manage} >

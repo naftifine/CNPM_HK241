@@ -91,11 +91,17 @@ hr {
     margin-left: 150px;
     margin-top: 20px;
 }
+<<<<<<< HEAD
 
 .sort {
     margin-left: 860px;
     margin-top: 23px;
 
+=======
+.frame .sort {
+    margin-left: 860px;
+    margin-top: -30px;
+>>>>>>> 76c45e7c843fc8fe84e903e808ce9bb4f7d606ea
     .icon_sort {
         font-size: 30px;
     }
@@ -151,7 +157,75 @@ hr {
         cursor: pointer;
     }
 }
+<<<<<<< HEAD
 
+=======
+.choosedelete p {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 5px;
+    margin-top: -5px;
+    width: 81px;
+    height: 24px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Lớp màu đen với độ mờ */
+    z-index: 999; /* Đảm bảo lớp phủ ở trên tất cả các phần tử khác */
+}
+.delete_box {
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000; /* Đảm bảo popup ở trên lớp phủ */
+}
+.delete_box h2 {
+    margin-top: -5px;
+    display: flex;
+    justify-content: center;
+}
+.delete_box hr {
+    width: 100%;
+    margin-top: -5px;
+    height: 2px;
+    margin-left: -1px;
+}
+.delete_box .ques p {
+    margin-left: 20px;
+}
+.delete_box .fileicon {
+    padding-right: 20px;
+}
+.delete_box .info {
+    margin-top: 30px;
+    margin-left: 90px;
+}
+.delete_box .file_icon {
+    position: absolute;
+    margin-left: -40px;
+    font-size: 70px;
+    margin-top: 15px;
+}
+.delete_box .info p {
+    margin-left: 50px;
+    display: flex;
+    justify-content: start;
+    margin-bottom: -15px;
+}
+>>>>>>> 76c45e7c843fc8fe84e903e808ce9bb4f7d606ea
 h3 {
     position: absolute;
     display: flex;
@@ -165,4 +239,26 @@ h3 {
     border: 2px solid #000;
     color: #ff0707;
     background-color: #f1ecec;
+<<<<<<< HEAD
 }
+=======
+}
+.close_popup_btn {
+    margin-top: 30px;
+    margin-left: 70px;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #000;
+    background-color: #add2e0;
+    border-radius: 15px;
+    &:hover {
+        background-color: #69d0f6;
+    }
+}
+.button {
+    margin-left: -10px;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+}
+>>>>>>> 76c45e7c843fc8fe84e903e808ce9bb4f7d606ea
