@@ -37,9 +37,6 @@ function PrinterBanner({ printerCode, printerName, printerLocation, printerStatu
 }
 
 
-
-
-
 function PrinterManage() {
     const [displayText, setDisplayText] = useState("");
 
