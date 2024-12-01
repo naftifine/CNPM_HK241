@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './dropdownUsericon.scss'
+import styles from './dropdownUsericon.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 function UserDropdown() {
@@ -24,12 +24,12 @@ function UserDropdown() {
     }, []);
 
     return (
-        <div className="user-dropdown" ref={dropdownRef}>
-            <button onClick={toggleDropdown} className='user-icon'>
+        <div className={styles.user__dropdown} ref={dropdownRef}>
+            <button onClick={toggleDropdown} className={styles.user__icon}>
                 <FontAwesomeIcon icon={faUser} style={{ color: 'white', fontSize: '25px' }} />
             </button>
             {isOpen && (
-                <div className="dropdown-menu">
+                <div className={styles.dropdown__menu}>
                     <a href="/profile" >Thông tin</a>
                     <a href="/" >Đăng xuất</a>
                 </div>

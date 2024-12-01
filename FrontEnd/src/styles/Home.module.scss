@@ -1,0 +1,71 @@
+li:nth-child(2) a {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: 0000;
+}
+
+.box {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    width: 600px;
+    height: 690px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: #c6f4ff;
+}
+
+.box .img {
+    position: absolute;
+    width: 193.31px;
+    height: 199px;
+    left: calc(50% - 193.31px / 2 - 0.34px);
+    top: calc(50% - 199px / 2 - 222.5px);
+}
+
+.content1 {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 55px;
+    left: 83px;
+    top: 358px;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    border: 2px solid #000;
+    border-radius: 15px;
+    background-color: #ffff;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #69d0f6;
+    }
+}
+
+.content2 {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 55px;
+    left: 83px;
+    top: 454px;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    border: 2px solid #000;
+    border-radius: 15px;
+    background-color: #ffff;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #69d0f6;
+    }
+}
