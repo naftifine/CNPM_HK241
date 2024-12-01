@@ -39,7 +39,12 @@ function Choose_file() {
         setSelectedOption(option);
     };
     const [openDeletes, setOpenDeletes] = useState(Array(files.length).fill(false));
-
+    const [fileToDelete, setFileToDelete] = useState(null);
+    const handleConfirmDelete = () => {
+        const updatedFiles = files.filter((file, index) => index !== fileToDelete);
+        setFiles(updatedFiles);
+        setIsOpen(false);
+    };
     const handleDeleteClick = (index) => {
         const updatedOpenDeletes = [...openDeletes];
         updatedOpenDeletes[index] = !updatedOpenDeletes[index];
@@ -68,7 +73,7 @@ function Choose_file() {
                 </div>
                 <hr></hr>
                 <h2>Các tệp tin đã tải</h2>
-                <h3> Số trang đã tải</h3>
+                <h3> Số trang hiện có: 15</h3>
 
                 <div className={styles.All} onClick={() => handleFeaturedClick(0, selectedOption)}>
                     {selectedOption}
@@ -166,6 +171,7 @@ function Choose_file() {
 
                     {isOpen && (
                         <>
+
                             <div className={styles.overlay} onClick={togglePopup}></div>
                             <div className={styles.delete_box}>
                                 <h2>Xoá tệp tin</h2>
@@ -180,7 +186,7 @@ function Choose_file() {
                                     <p> Số trang: 4</p>
                                 </p>
 
-                                <button onClick={togglePopup} className={styles.close_popup_btn}>
+                                <button onClick={handleConfirmDelete} className={styles.close_popup_btn}>
                                     Đồng ý
                                 </button>
                                 <button onClick={togglePopup} className={styles.close_popup_btn}>

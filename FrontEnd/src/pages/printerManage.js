@@ -8,7 +8,6 @@ import FilterBar from '../components/FilterBar/FilterBar';
 import FilterBarTime from '../components/FilterBar/FilterBarTime';
 import NavbarSPSO from '../components/Navbar/NavbarSPSO';
 import { useNavigate } from "react-router-dom";
-
 function PrinterBanner({ printerCode, printerName, printerLocation, printerStatus }) {
     const navigate = useNavigate(); // Hook for navigation
 
@@ -16,13 +15,16 @@ function PrinterBanner({ printerCode, printerName, printerLocation, printerStatu
         navigate(`/inforprinter/${printerCode}`); // Navigate to the URL with printerCode
     };
     return (
-        <div className={style.printer__banner} onClick={handleClick} style={{ cursor: 'pointer' }}>
+        <div className={style.printer_banner} onClick={handleClick} style={{ cursor: 'pointer' }}>
             <FontAwesomeIcon icon={faPrint} className={style.printer__icon} />
-            <div className={style.printer__details}>
-                <p className={style.printer__code}>{printerCode}</p>
-                <p className={style.printer__name}>{printerName}</p>
-                <p className={style.printer__location}>{printerLocation}</p>
-                <p className={`printer-status ${printerStatus === 'Sẵn sàng' ? 'ready' : 'not-ready'}`}>
+            <div className={style.printer_details}>
+                <p className={style.printer_code}>{printerCode}</p>
+                <p className={style.printer_name}>{printerName}</p>
+                <p className={style.printer_location}>{printerLocation}</p>
+                <p
+                    className={`${style.printer_status} ${printerStatus === 'Sẵn sàng' ? style.ready : style.not_ready
+                        }`}
+                >
                     {printerStatus}
                 </p>
             </div>
@@ -32,16 +34,18 @@ function PrinterBanner({ printerCode, printerName, printerLocation, printerStatu
 
 
 function PrinterManage() {
-    const [displayText, setDisplayText] = useState("");
-
+    const navigate = useNavigate()
     return (
         <>
             <NavbarSPSO />
             <FilterBar />
-            <div className={style.abc}> <SearchBar className={style.search} setDisplayText={setDisplayText} /></div>
+            <div className={style.searchbar}>
+                <SearchBar />
+            </div>
 
             <FilterBarTime />
-            <div className={style.printermanage}>
+            <h1> DANH SÁCH MÁY IN</h1>
+            <div className={style.printer_manage} >
                 <PrinterBanner
                     printerCode="555666"
                     printerName="ABCD"
@@ -49,7 +53,7 @@ function PrinterManage() {
                     printerStatus="Sẵn sàng"
                 />
                 <div className={style.containerButton}>
-                    <button className={style.buttonAdd}>Thêm máy in</button>
+                    <button className={style.buttonAdd} onClick={() => navigate(`/addnewprinter`)} style={{ cursor: 'pointer' }}>Thêm máy in</button>
                 </div>
             </div>
         </>

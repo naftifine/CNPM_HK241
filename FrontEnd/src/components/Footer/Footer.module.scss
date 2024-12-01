@@ -1,11 +1,11 @@
 .footerfooter {
-    margin-top: 737px;
     position: absolute;
+    top: 665px;
     justify-content: space-between;
     text-align: center;
     align-items: center;
     width: 100%;
-    height: 196px;
+    height: 150px;
     background-color: #b6dfe1;
 }
 
@@ -16,6 +16,7 @@
 }
 
 .footerfooter .contentfooter {
+    margin-top: -5px;
     font-size: 16px;
     font-weight: 500;
 }

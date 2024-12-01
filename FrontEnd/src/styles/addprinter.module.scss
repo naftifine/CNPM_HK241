@@ -1,15 +1,16 @@
 .information {
     position: absolute;
-    top: 55%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     align-items: center;
     width: 669px;
-    height: 675px;
+    height: 750px;
     border: 3px solid #000;
     background-color: #F8FBFF;
     margin-top: 50px;
     border-radius: 15px;
+    margin-bottom: auto;
 }
 
 h1 {
@@ -23,17 +24,6 @@ h1 {
     align-items: center;
 }
 
-hr {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    width: 300px;
-    height: 1px;
-    background-color: #000;
-    border: 0.5px solid #000;
-}
-
 .information .icon {
     display: flex;
     justify-content: center;
@@ -43,106 +33,70 @@ hr {
     font-size: 150px;
 }
 
-.content {
-    margin-top: 52px;
-    margin-left: 30px;
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    align-items: flex-start;
-    gap: 0px;
-    border-spacing: 40px;
-    border-collapse: separate;
-    flex-direction: column;
-
+.label {
     font-family: "Lato", sans-serif;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 300px;
     font-size: 24px;
     line-height: 29px;
     color: #000000;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: 50px;
-    height: 400px;
-    flex-direction: row;
-    max-width: 669px;
-    row-gap: 10px;
-
-
-    .button,
-    .buttonback {
-        margin: 40px;
-
-        width: 129px;
-        height: 55px;
-        background: #ADD2E0;
-        border: 1px solid #000;
-        border-radius: 15px;
-
-
-        font-family: "Lato", sans-serif;
-        font-style: normal;
-        font-weight: 200;
-        font-size: 24px;
-        line-height: 38px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        cursor: pointer;
-        color: #000000;
-
-
-        box-sizing: border-box;
-
-        &:hover {
-            background-color: #A4B1B6;
-        }
-    }
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
 
-.delete_box {
-
-    position: fixed;
-    background-color: #fff;
-    padding: 20px 30px;
-    top: 50%;
-    left: 25%;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border: 1px solid #000;
-
-
-    h2 {
-        margin-bottom: 10px;
+    .formGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 
-    p {
-        margin-bottom: 20px;
-        color: #555;
-    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
 
-    .close_popup_btn {
-        padding: 10px 20px;
-        background-color: #ADD2E0;
-        color: black;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-left: 25px;
-        margin-right: 25px;
-
-        &:hover {
-            background-color: #A4B1B6;
+        .formGroup {
+            flex: 1;
         }
     }
 
+    .buttonGroup {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
 
+        .button,
+        .buttonback {
+            flex: 1;
+            padding: 10px;
+            font-family: "Lato", sans-serif;
+            font-size: 18px;
+            font-weight: 600px;
+            text-align: center;
+            color: #000;
+            background-color: #add2e0;
+            border: 1px solid #000;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #a4b1b6;
+            }
+        }
+    }
 }

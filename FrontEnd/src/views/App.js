@@ -7,6 +7,9 @@ import Inforstudent from '../pages/InforStudent';
 import PrinterManage from '../pages/printerManage';
 import InfoPrinter from '../pages/InfoPrinter'
 import Choose_file from '../pages/choose_file';
+import AddNewPrinter from '../pages/addprinter';
+import Report from '../pages/Report';
+import History_print from '../pages/history_print';
 function App() {
 
   return (
@@ -16,9 +19,13 @@ function App() {
         <Route path="/homestudent" element={<Main_hcmut />} />
         <Route path="/profile" element={<Inforstudent />} />
         <Route path="/print" element={<Choose_file />} />
+        <Route path="/history" element={<History_print />} />
         <Route path="/homespso" element={<Main_spso />} />
         <Route path="/printermanage" element={<PrinterManage />} />
         <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
+        <Route path="/addnewprinter" element={<AddNewPrinter />} />
+        <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
+        <Route path="/" element={<Report />} />
       </Routes>
     </Router>
   )
