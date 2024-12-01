@@ -2,13 +2,27 @@ import React from "react";
 import styles from "../styles/Report.module.scss";
 import NavbarSPSO from "../components/Navbar/NavbarSPSO";
 
+function Statistics ({ profit, numberOFPages }) {
+   return (
+   <div className={styles.statistics}>
+            <div className={styles.stat_box}>
+                <div className={styles.stat_title}>DOANH THU</div>
+                <p>{profit} VNĐ</p>
+            </div>
+            <div className={styles.stat_box}>
+                <div className={styles.stat_title}>SỐ TRANG ĐÃ IN</div>
+                <p>{numberOFPages}</p>
+            </div>
+    </div>
+   );
+}
 function MachineStatus ({ activeMachines, inactiveMachines }) {
     const totalMachines = activeMachines + inactiveMachines;
     const activeRate = ((activeMachines / totalMachines) * 100).toFixed(2);
 
     return (
     <div className={styles.machine_status}>
-        <h3>Tỷ lệ máy in đang hoạt động là: {activeRate}%</h3>
+        <div className={styles.machine_title}>Tỷ lệ máy in đang hoạt động là: {activeRate}%</div>
         <div className={styles.status}>
             <div className={styles.status_box}>
                 <h4>Đang hoạt động</h4>
@@ -30,7 +44,7 @@ function Report () {
     <div className={styles.report_container}>
         <div className={styles.filters}>
             <div>
-                <label>Tất cả</label>
+                <label>Mốc thời gian</label>
             </div>
             <div>
                 <label>Tháng:</label>
@@ -50,19 +64,10 @@ function Report () {
             </div>
         </div>
 
-        <div className={styles.statistics}>
-            <div className={styles.stat_box}>
-                <h3>DOANH THU</h3>
-                <p>12,565,054 VNĐ</p>
-            </div>
-            <div className={styles.stat_box}>
-                <h3>SỐ TRANG ĐÃ IN</h3>
-                <p>1024</p>
-            </div>
-        </div>
+        <Statistics profit="12,345,678" numberOFPages={1024} />
 
         <div className={styles.machine_usage}>
-            <h3>THỐNG KÊ MÁY IN ĐƯỢC SỬ DỤNG NHIỀU NHẤT</h3>
+            <div className={styles.usage_title}>THỐNG KÊ MÁY IN ĐƯỢC SỬ DỤNG NHIỀU NHẤT</div>
             <table>
             <thead>
                 <tr>

@@ -60,8 +60,6 @@ function Choose_file() {
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
-    const navigate = useNavigate();
-    let { printerid } = useParams();
     return (
         <>
             <NavbarStudent />

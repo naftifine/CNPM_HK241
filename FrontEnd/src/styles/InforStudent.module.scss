@@ -8,7 +8,8 @@
     height: 650px;
     border: 1px solid #000;
 }
-h1 {
+.header {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     font-family: "Lato", sans-serif;
@@ -16,8 +17,9 @@ h1 {
     text-align: center;
     align-items: center;
 }
-hr {
+.information hr {
     display: flex;
+    margin-top: 30px;
     justify-content: center;
     text-align: center;
     align-items: center;
