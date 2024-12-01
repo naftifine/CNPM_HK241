@@ -2,16 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import Navbar from '../components/Navbar/Navbar';
 //import Home from '../components/Home/Home';
-//import Hcmut_spso from '../components/hcmut_spso/hcmut_spso';
-//import Main_hcmut from '../components/HCMUT/Main_hcmut/Main_hcmut';
-//import Main_spso from '../components/SPSO/Main_spso/Main_spso';
+import Hcmut_spso from '../pages/Home';
+import Main_hcmut from '../pages/Main_hcmut';
+import Main_spso from '../pages/Main_spso';
 //import Infor from '../components/HCMUT/Inforstudent/Infor';
-//import PrinterManage from '../pages/PrinterManage/printerManage';
-import Choose_file from '../components/HCMUT/choose_file/choose_file';
+import PrinterManage from '../pages/printerManage';
+import InfoPrinter from '../pages/InfoPrinter'
+import Inforstudent from '../pages/InforStudent';
+import Infor from '../pages/InfoPrinter';
 function App() {
 
   return (
-    <Choose_file />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Hcmut_spso />} />
+        <Route path="/homestudent" element={<Main_hcmut />} />
+        <Route path="/profile" element={<Inforstudent />} />
+
+        <Route path="/homespso" element={<Main_spso />} />
+        <Route path="/printermanage" element={<PrinterManage />} />
+        <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
+      </Routes>
+    </Router>
+
   );
 }
 

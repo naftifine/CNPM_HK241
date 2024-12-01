@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import styles from './dropdownUsericon.module.scss'
+import styles from './dropdownSPSS.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
-function UserDropdown() {
+function UserDropdownSPSS() {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -24,13 +24,12 @@ function UserDropdown() {
     }, []);
 
     return (
-        <div className={styles.user__dropdown} ref={dropdownRef}>
-            <button onClick={toggleDropdown} className={styles.user__icon}>
+        <div className={styles.user_dropdown} ref={dropdownRef}>
+            <button onClick={toggleDropdown} className={styles.user_icon}>
                 <FontAwesomeIcon icon={faUser} style={{ color: 'white', fontSize: '25px' }} />
             </button>
             {isOpen && (
-                <div className={styles.dropdown__menu}>
-                    <a href="/profile" >Thông tin</a>
+                <div className={styles.dropdown_menu}>
                     <a href="/" >Đăng xuất</a>
                 </div>
             )}
@@ -38,4 +37,4 @@ function UserDropdown() {
     );
 }
 
-export default UserDropdown;
+export default UserDropdownSPSS;

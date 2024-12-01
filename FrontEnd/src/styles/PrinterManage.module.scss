@@ -1,11 +1,4 @@
-li:nth-child(3) a {
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 3px;
-    text-decoration-color: 0000;
-}
-
-.printer__manage {
+.printer_manage {
     text-align: center;
     // font-family: Arial, sans-serif;
     position: absolute;
@@ -13,7 +6,7 @@ li:nth-child(3) a {
     left: 100px;
 }
 
-.printer__banner {
+.printer_banner {
     display: flex;
     /* Đặt flexbox */
     flex-direction: row;
@@ -32,13 +25,13 @@ li:nth-child(3) a {
     transition: box-shadow 0.3s ease;
     background-color: #f1ecec;
 
-    .printer__icon {
+    .printer_icon {
         font-size: 36px;
         color: black;
         margin-right: 20px;
     }
 
-    .printer__details {
+    .printer_details {
         display: flex;
         /* Đặt flexbox để các phần tử nằm trên cùng một dòng */
         flex-direction: row;
@@ -47,10 +40,10 @@ li:nth-child(3) a {
         /* Khoảng cách giữa các phần tử */
         text-align: center;
 
-        .printer__code,
-        .printer__name,
-        .printer__location,
-        .printer-status {
+        .printer_code,
+        .printer_name,
+        .printer_location,
+        .printer_status {
             flex-grow: 1;
             min-width: 0;
             // left: 82px;
@@ -63,18 +56,18 @@ li:nth-child(3) a {
             text-overflow: ellipsis;
         }
 
-        .printer__code {
+        .printer_code {
             font-weight: bold;
         }
 
-        .printer-status {
+        .printer_status {
             font-weight: bold;
 
             &.ready {
                 color: green;
             }
 
-            &.not-ready {
+            &.not_ready {
                 color: red;
             }
         }

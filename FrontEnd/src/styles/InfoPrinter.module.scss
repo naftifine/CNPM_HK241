@@ -73,7 +73,8 @@ hr {
     row-gap: 10px;
 
 
-    .button {
+    .button,
+    .buttonback {
         margin: 40px;
 
         width: 129px;
@@ -105,7 +106,7 @@ hr {
 }
 
 
-.delete-box {
+.delete_box {
 
     position: fixed;
     background-color: #fff;
@@ -127,7 +128,7 @@ hr {
         color: #555;
     }
 
-    .close-popup-btn {
+    .close_popup_btn {
         padding: 10px 20px;
         background-color: #ADD2E0;
         color: black;

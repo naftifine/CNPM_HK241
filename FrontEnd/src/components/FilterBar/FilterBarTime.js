@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./FilterBarTime.scss";
+import styles from "./FilterBarTime.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSTransition } from 'react-transition-group';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -15,12 +15,12 @@ export default function FilterBarTime() {
     };
     return (
         <>
-            <div className="featured_time" onClick={() => handleFeaturedClick(0, selectedOption)}>
+            <div className={styles.featured_time} onClick={() => handleFeaturedClick(0, selectedOption)}>
                 {selectedOption}
                 {openDiv === 0 ? (
-                    <FontAwesomeIcon className="icon__item_time" icon={faChevronUp} />
+                    <FontAwesomeIcon className={styles.icon__item_time} icon={faChevronUp} />
                 ) : (
-                    <FontAwesomeIcon className="icon__item_time" icon={faChevronDown} />
+                    <FontAwesomeIcon className={styles.icon__item_time} icon={faChevronDown} />
                 )}
             </div>
             <CSSTransition
@@ -34,7 +34,7 @@ export default function FilterBarTime() {
                 }}
                 unmountOnExit
             >
-                <div className="choose_time">
+                <div className={styles.choose_time}>
                     <p onClick={() => handleFeaturedClick(0, 'Tất cả')}>Tất cả</p>
                     <p onClick={() => handleFeaturedClick(0, 'Cũ hơn')}>Cũ hơn</p>
                 </div>

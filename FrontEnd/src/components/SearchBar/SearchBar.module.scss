@@ -1,5 +1,5 @@
 /* Styles for the search bar */
-.search-bar {
+.search_bar {
     position: absolute;
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@
     height: 25px;
 
     /* Input field styles */
-    .search-input {
+    .search_input {
         flex: 1;
         border: none;
         outline: none;
@@ -22,7 +22,7 @@
         border-radius: 5px 0 0 5px; // Rounded corners for the left side
     }
 
-    .search-icon {
+    .search_icon {
         position: absolute;
         left: 15px;
         font-size: 18px;
