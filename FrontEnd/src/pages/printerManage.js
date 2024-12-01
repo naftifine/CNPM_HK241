@@ -6,7 +6,11 @@ import SearchBar from '../components/SearchBar/SearchBar';
 import { useState } from 'react';
 import FilterBar from '../components/FilterBar/FilterBar';
 import FilterBarTime from '../components/FilterBar/FilterBarTime';
+<<<<<<< HEAD
 import NavbarSPSO from '../components/Navbar/NavbarSPSO';
+=======
+import NavbarLogin from '../components/Navbar/NavbarSPSO';
+>>>>>>> e7767fe7a7c6a4437cb5d3c2092967427f0f7523
 import { useNavigate } from "react-router-dom";
 
 function PrinterBanner({ printerCode, printerName, printerLocation, printerStatus }) {
@@ -29,9 +33,6 @@ function PrinterBanner({ printerCode, printerName, printerLocation, printerStatu
         </div>
     )
 }
-
-
-
 
 
 function PrinterManage() {
