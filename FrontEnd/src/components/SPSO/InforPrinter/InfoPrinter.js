@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import NavbarLogin from '../NavbarLogin/NavbarLogin.js'
 import { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 
 function Infor() {
@@ -11,39 +12,41 @@ function Infor() {
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
-        
+    const navigate = useNavigate();
+    let { printerid } = useParams();
     return (
+
         <>
             <NavbarLogin />
             <div className='information'>
                 <h1 className='header'>THÔNG TIN MÁY IN</h1>
                 <hr></hr>
                 <div className='content'>
-                    <p>Tên máy:</p>
+                    <p>Tên máy: {printerid}</p>
                     <p>Dòng máy:</p>
                     <p>Cơ sở:</p>
                     <p>Trạng thái:</p>
                 </div>
                 <div className="container">
-                    <button className="button">Trở lại</button>
+                    <button className="button" onClick={(navigate("/"))}>Trở lại</button>
                     <button className="button">Cập nhật</button>
                     <button className="button" onClick={togglePopup} >
                         Xoá
                     </button>
-                        {isOpen && (
-                            
-                            <div className="delete-box">
-                                <h2>Xoá máy in</h2>
-                                <p>Bạn chắc chắn muốn xoá máy in?</p>
-                                <button onClick={togglePopup} className="close-popup-btn">
-                                    Huỷ
-                                </button>
-                                <button onClick={togglePopup} className="close-popup-btn">
-                                    Xác nhận
-                                </button>
-                            </div>
-                            
-                        )}
+                    {isOpen && (
+
+                        <div className="delete-box">
+                            <h2>Xoá máy in</h2>
+                            <p>Bạn chắc chắn muốn xoá máy in?</p>
+                            <button onClick={togglePopup} className="close-popup-btn">
+                                Huỷ
+                            </button>
+                            <button onClick={togglePopup} className="close-popup-btn">
+                                Xác nhận
+                            </button>
+                        </div>
+
+                    )}
                 </div>
             </div>
         </>

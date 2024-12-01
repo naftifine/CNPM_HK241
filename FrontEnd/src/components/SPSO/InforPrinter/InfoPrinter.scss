@@ -11,6 +11,7 @@
     margin-top: 50px;
     border-radius: 15px;
 }
+
 h1 {
     display: flex;
     margin-top: 50px;
@@ -21,6 +22,7 @@ h1 {
     text-align: center;
     align-items: center;
 }
+
 hr {
     display: flex;
     justify-content: center;
@@ -31,6 +33,7 @@ hr {
     background-color: #000;
     border: 0.5px solid #000;
 }
+
 .information .icon {
     display: flex;
     justify-content: center;
@@ -39,6 +42,7 @@ hr {
     margin-top: 41px;
     font-size: 150px;
 }
+
 .content {
     margin-top: 52px;
     margin-left: 30px;
@@ -58,25 +62,26 @@ hr {
     line-height: 29px;
     color: #000000;
 }
+
 .container {
     display: flex;
-    justify-content: center; 
-    align-items: 50px;     
+    justify-content: center;
+    align-items: 50px;
     height: 400px;
     flex-direction: row;
     max-width: 669px;
     row-gap: 10px;
-    
+
 
     .button {
         margin: 40px;
-        
-        width: 129px; 
+
+        width: 129px;
         height: 55px;
         background: #ADD2E0;
         border: 1px solid #000;
         border-radius: 15px;
-        
+
 
         font-family: "Lato", sans-serif;
         font-style: normal;
@@ -90,8 +95,9 @@ hr {
         cursor: pointer;
         color: #000000;
 
-       
-        box-sizing: border-box; 
+
+        box-sizing: border-box;
+
         &:hover {
             background-color: #A4B1B6;
         }
@@ -100,7 +106,7 @@ hr {
 
 
 .delete-box {
-   
+
     position: fixed;
     background-color: #fff;
     padding: 20px 30px;
@@ -113,29 +119,29 @@ hr {
 
 
     h2 {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
     }
 
     p {
-      margin-bottom: 20px;
-      color: #555;
+        margin-bottom: 20px;
+        color: #555;
     }
 
     .close-popup-btn {
-      padding: 10px 20px;
-      background-color: #ADD2E0;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-left: 25px;
-      margin-right: 25px;
+        padding: 10px 20px;
+        background-color: #ADD2E0;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 25px;
+        margin-right: 25px;
 
-      &:hover {
-        background-color: #A4B1B6;
-      }
+        &:hover {
+            background-color: #A4B1B6;
+        }
     }
 
-   
+
 }

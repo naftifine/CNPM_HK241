@@ -11,7 +11,13 @@ import InfoPrinter from '../components/SPSO/InforPrinter/InfoPrinter'
 function App() {
 
   return (
-    <PrinterManage />
+    <Router>
+      <Routes>
+        <Route path="/" element={<PrinterManage />} />
+        <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
+      </Routes>
+    </Router>
+
   );
 }
 
