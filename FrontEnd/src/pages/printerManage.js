@@ -38,7 +38,8 @@ function PrinterManage() {
         <>
             <NavbarSPSO />
             <FilterBar />
-            <SearchBar setDisplayText={setDisplayText} />
+            <div className={style.abc}> <SearchBar className={style.search} setDisplayText={setDisplayText} /></div>
+
             <FilterBarTime />
             <div className={style.printermanage}>
                 <PrinterBanner
