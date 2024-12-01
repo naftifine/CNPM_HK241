@@ -1,17 +1,16 @@
-import styles from '../styles/InfoPrinter.module.scss';
+import styles from '../styles/addprinter.module.scss';
 import NavbarLogin from '../components/Navbar/NavbarSPSO.js'
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 
-function Infor() {
+function AddNewPrinter() {
     const [isOpen, setIsOpen] = useState(false);
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
     const navigate = useNavigate();
-    let { printerid } = useParams();
     return (
 
         <>
@@ -20,7 +19,7 @@ function Infor() {
                 <h1 className={styles.header}>THÔNG TIN MÁY IN</h1>
                 <hr></hr>
                 <div className={styles.content}>
-                    <p>Tên máy: {printerid}</p>
+                    <p>Tên máy:</p>
                     <p>Dòng máy:</p>
                     <p>Cơ sở:</p>
                     <p>Trạng thái:</p>
@@ -50,4 +49,4 @@ function Infor() {
         </>
     )
 }
-export default Infor;
+export default AddNewPrinter;

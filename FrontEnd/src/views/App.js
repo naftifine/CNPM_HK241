@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//import Navbar from '../components/navbar/navbar';
-//import Home from '../components/Home/Home';
 import Hcmut_spso from '../pages/Home';
 import Main_hcmut from '../pages/Main_hcmut';
 import Main_spso from '../pages/Main_spso';
-//import Infor from '../components/HCMUT/Inforstudent/Infor';
 import PrinterManage from '../pages/printerManage';
 import InfoPrinter from '../pages/InfoPrinter'
 import Inforstudent from '../pages/InforStudent';
-import Infor from '../pages/InfoPrinter';
 function App() {
 
   return (

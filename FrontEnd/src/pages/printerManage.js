@@ -5,7 +5,7 @@ import { faPrint } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from '../components/SearchBar/SearchBar';
 import { useState } from 'react';
 import FilterBar from '../components/FilterBar/FilterBar';
-import FilterBarTime from '../components/FilterBarTime/FilterBarTime';
+import FilterBarTime from '../components/FilterBar/FilterBarTime';
 import NavbarLogin from '../components/Navbar/NavbarSPSO';
 import { useNavigate } from "react-router-dom";
 import clsx from 'clsx';
