@@ -6,6 +6,7 @@ li:nth-child(3) a {
 }
 
 .frame {
+    overflow-x: auto;
     width: 1400px;
     height: 700px;
     background-color: #f8fbff;
@@ -170,9 +171,7 @@ hr {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Lớp màu đen với độ mờ */
     z-index: 999;
-    /* Đảm bảo lớp phủ ở trên tất cả các phần tử khác */
 }
 
 .delete_box {
@@ -186,7 +185,6 @@ hr {
     padding: 20px;
     border-radius: 8px;
     z-index: 1000;
-    /* Đảm bảo popup ở trên lớp phủ */
 }
 
 .delete_box h2 {
@@ -241,25 +239,23 @@ hr {
     border: 2px solid #000;
     color: #ff0707;
     background-color: #f1ecec;
-
-    .close_popup_btn {
-        margin-top: 30px;
-        margin-left: 70px;
-        width: 100px;
-        height: 35px;
-        border: 1px solid #000;
-        background-color: #add2e0;
-        border-radius: 15px;
-
-        &:hover {
-            background-color: #69d0f6;
-        }
-    }
-
     .button {
         margin-left: -10px;
         width: 50px;
         height: 25px;
         border-radius: 5px;
+    }
+}
+.container .popup_btn {
+    margin-top: 30px;
+    margin-left: 70px;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #000;
+    background-color: #add2e0;
+    border-radius: 15px;
+
+    &:hover {
+        background-color: #69d0f6;
     }
 }

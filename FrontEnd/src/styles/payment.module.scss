@@ -46,7 +46,7 @@
     border-spacing: 20px;
     border-collapse: separate;
 }
-.information .print {
+.information .pay {
     display: flex;
     margin-left: 300px;
     margin-top: -40px;
@@ -133,4 +133,19 @@
     &:hover {
         background-color: #69d0f6;
     }
+}
+.qrcode {
+    margin-left: 130px;
+    margin-top: -400px;
+    z-index: 1000;
+}
+.qrcode p {
+    margin-left: 10px;
+}
+.qrcode {
+    position: fixed;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
 }

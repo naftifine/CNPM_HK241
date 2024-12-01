@@ -60,6 +60,7 @@ function Choose_file() {
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
+
     return (
         <>
             <NavbarStudent />
@@ -184,10 +185,10 @@ function Choose_file() {
                                     <p> Số trang: 4</p>
                                 </p>
 
-                                <button onClick={handleConfirmDelete} className={styles.close_popup_btn}>
+                                <button onClick={handleConfirmDelete} className={styles.popup_btn}>
                                     Đồng ý
                                 </button>
-                                <button onClick={togglePopup} className={styles.close_popup_btn}>
+                                <button onClick={togglePopup} className={styles.popup_btn}>
                                     Trở lại
                                 </button>
                             </div>
