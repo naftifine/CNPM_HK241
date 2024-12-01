@@ -24,12 +24,12 @@ function UserDropdown() {
     }, []);
 
     return (
-        <div className={styles.user_dropdown} ref={dropdownRef}>
-            <button onClick={toggleDropdown} className={styles.user_icon}>
+        <div className={styles.user__dropdown} ref={dropdownRef}>
+            <button onClick={toggleDropdown} className={styles.user__icon}>
                 <FontAwesomeIcon icon={faUser} style={{ color: 'white', fontSize: '25px' }} />
             </button>
             {isOpen && (
-                <div className={styles.dropdown_menu}>
+                <div className={styles.dropdown__menu}>
                     <a href="/profile" >Thông tin</a>
                     <a href="/" >Đăng xuất</a>
                 </div>

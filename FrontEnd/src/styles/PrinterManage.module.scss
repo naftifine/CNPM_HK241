@@ -23,7 +23,7 @@
     height: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
-    background-color: #F1ECEC;
+    background-color: #f1ecec;
 
     .printer_icon {
         font-size: 36px;
@@ -48,16 +48,13 @@
             min-width: 0;
             // left: 82px;
 
-            font-family: 'Lato';
+            font-family: "Lato";
             font-size: 20px;
             font-weight: normal;
             font-style: normal;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-
-
-
 
         .printer_code {
             font-weight: bold;
@@ -86,12 +83,11 @@
     .buttonAdd {
         width: 400px;
         height: 55px;
-        background: #ADD2E0;
+        background: #add2e0;
         border: 1px solid #000;
         border-radius: 15px;
 
-
-        font-family: 'Lato';
+        font-family: "Lato";
         font-style: normal;
         font-weight: 300;
         font-size: 32px;
@@ -103,11 +99,10 @@
 
         color: #000000;
 
-
         box-sizing: border-box;
 
         &:hover {
-            background-color: #A4B1B6;
+            background-color: #a4b1b6;
         }
     }
 }

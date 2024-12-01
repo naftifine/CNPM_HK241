@@ -1,15 +1,15 @@
-.user_dropdown {
+.user__dropdown {
     position: relative;
     display: inline-block;
 }
 
-.user_icon {
+.user__icon {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.dropdown_menu {
+.dropdown__menu {
     position: absolute;
     top: 100%;
     right: 0;
@@ -19,7 +19,7 @@
     z-index: 1000;
 }
 
-.dropdown_menu a {
+.dropdown__menu a {
     margin-left: 0;
     justify-content: center;
     text-align: center;
