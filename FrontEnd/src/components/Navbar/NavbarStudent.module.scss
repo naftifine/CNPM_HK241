@@ -28,23 +28,19 @@ li a {
 
 li a:hover:not(.active) {
     text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 8px;
 }
-
 .active {
     font-weight: bold;
     position: relative;
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -1px;
-        height: 2px;
+        bottom: -5px;
+        height: 3px;
         background-color: white;
-        border-radius: 2px;
     }
 }
 
@@ -85,5 +81,5 @@ li a:hover:not(.active) {
 }
 
 .user {
-    margin-left: 500px;
+    margin-left: 650px;
 }

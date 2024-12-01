@@ -1,7 +1,7 @@
 import styles from '../styles/addprinter.module.scss';
 import NavbarLogin from '../components/Navbar/NavbarSPSO.js'
 import { useNavigate } from 'react-router-dom';
-function Infor() {
+function AddPrinter() {
 
     const navigate = useNavigate()
     return (
@@ -53,4 +53,4 @@ function Infor() {
         </>
     )
 }
-export default Infor;
+export default AddPrinter;

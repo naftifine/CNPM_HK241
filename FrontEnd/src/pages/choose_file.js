@@ -38,7 +38,18 @@ function Choose_file() {
         setOpenDiv(openDiv === index ? null : index);
         setSelectedOption(option);
     };
-    const [open, setDiv] = useState(null);
+    const [openDeletes, setOpenDeletes] = useState(Array(files.length).fill(false));
+    const [fileToDelete, setFileToDelete] = useState(null);
+    const handleConfirmDelete = () => {
+        const updatedFiles = files.filter((file, index) => index !== fileToDelete);
+        setFiles(updatedFiles);
+        setIsOpen(false);
+    };
+    const handleDeleteClick = (index) => {
+        const updatedOpenDeletes = [...openDeletes];
+        updatedOpenDeletes[index] = !updatedOpenDeletes[index];
+        setOpenDeletes(updatedOpenDeletes);
+    };
     const [openSort, setOpenSort] = useState(false);
 
     const handleSortClick = () => {
@@ -62,7 +73,7 @@ function Choose_file() {
                 </div>
                 <hr></hr>
                 <h2>Các tệp tin đã tải</h2>
-                <h3> Số trang đã tải</h3>
+                <h3> Số trang hiện có: 15</h3>
 
                 <div className={styles.All} onClick={() => handleFeaturedClick(0, selectedOption)}>
                     {selectedOption}
@@ -122,31 +133,67 @@ function Choose_file() {
                                 <td>{file.type}</td>
                                 <td>{file.size}</td>
                                 <td>
-                                    <FontAwesomeIcon className={styles.icon_delete} icon={faEllipsisVertical} style={{ color: "#000000" }} />
+                                    <div className={styles.delete} onClick={() => handleDeleteClick(index)}>
+                                        <FontAwesomeIcon className={styles.icon_delete} icon={faEllipsisVertical} style={{ color: "#000000" }} />
+                                    </div>
+
+                                    <CSSTransition
+                                        in={openDeletes[index]}
+                                        timeout={300}
+                                        classNames={{
+                                            enter: styles['slide-enter'],
+                                            enterActive: styles['slide-enter-active'],
+                                            exit: styles['slide-exit'],
+                                            exitActive: styles['slide-exit-active'],
+                                        }}
+                                        unmountOnExit
+                                    >
+                                        <div className={styles.choosedelete}>
+                                            <p onClick={() => {
+                                                const updatedOpenDeletes = [...openDeletes];
+                                                updatedOpenDeletes[index] = false;
+                                                setOpenDeletes(updatedOpenDeletes);
+                                            }}>
+                                                <button className={styles.button} onClick={togglePopup} >
+                                                    Xoá
+                                                </button>
+                                            </p>
+
+                                        </div >
+                                    </CSSTransition>
+
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
                 <div className={styles.container}>
-                    <button className={styles.buttonback} onClick={() => navigate("/print")}>Trở lại</button>
-                    <button className={styles.button} onClick={() => navigate("/print")}>Cập nhật</button>
-                    <button className={styles.button} onClick={togglePopup} >
-                        Xoá
-                    </button>
+
                     {isOpen && (
+                        <>
 
-                        <div className={styles.delete_box}>
-                            <h2>Xoá máy in</h2>
-                            <p>Bạn chắc chắn muốn xoá máy in?</p>
-                            <button onClick={togglePopup} className={styles.close_popup_btn}>
-                                Huỷ
-                            </button>
-                            <button onClick={togglePopup} className={styles.close_popup_btn}>
-                                Xác nhận
-                            </button>
-                        </div>
+                            <div className={styles.overlay} onClick={togglePopup}></div>
+                            <div className={styles.delete_box}>
+                                <h2>Xoá tệp tin</h2>
+                                <hr></hr>
+                                <p className={styles.ques}><FontAwesomeIcon icon={faFile} className={styles.fileicon} style={{ color: "#f51414", }} />
+                                    Bạn có chắc chắn xóa tệp tin này ?</p>
+                                < p className={styles.info}>  <FontAwesomeIcon icon={faFile} className={styles.file_icon} style={{ color: "#000000", }} />
+                                    <p>L08_BÀI TẬP THUYẾT TRÌNH</p>
+                                    <p>Loại: PDF</p>
+                                    <p>Kích thước: 179KB</p>
+                                    <p>Ngày cập nhật: 22/5/2024 6:53 AM</p>
+                                    <p> Số trang: 4</p>
+                                </p>
 
+                                <button onClick={handleConfirmDelete} className={styles.close_popup_btn}>
+                                    Đồng ý
+                                </button>
+                                <button onClick={togglePopup} className={styles.close_popup_btn}>
+                                    Trở lại
+                                </button>
+                            </div>
+                        </>
                     )}
                 </div>
             </div>
