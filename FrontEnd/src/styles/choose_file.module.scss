@@ -15,6 +15,7 @@ li:nth-child(3) a {
 .frame h1 {
     display: flex;
     align-items: center;
+    justify-content: start;
     margin-left: 20px;
     padding-left: 10px;
     width: 1341px;
@@ -89,6 +90,7 @@ hr {
     z-index: 9999;
 }
 .chooseoption {
+    position: absolute;
     margin-left: 725px;
     margin-top: -15px;
 }

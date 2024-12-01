@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import styles from './choose_file.module.scss'
+import styles from '../styles/choose_file.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSTransition } from 'react-transition-group';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import Navbar from '../NavbarLogin/NavbarLogin'
-import SearchBar from '../../SearchBar/SearchBar';
-import Upload from '../UploadFile/Uploadfile'
+import NavbarStudent from '../components/Navbar/NavbarStudent';
+import SearchBar from '../components/SearchBar/SearchBar';
+import Upload from '../components/UploadFile/Uploadfile';
+import { useParams, useNavigate } from 'react-router-dom';
+
 import { faBars, faFile, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons'
 function Choose_file() {
     const [files, setFiles] = useState([
@@ -42,9 +44,16 @@ function Choose_file() {
     const handleSortClick = () => {
         setOpenSort(!openSort);
     };
+    const [isOpen, setIsOpen] = useState(false);
+
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    };
+    const navigate = useNavigate();
+    let { printerid } = useParams();
     return (
         <>
-            <Navbar />
+            <NavbarStudent />
             <div className={styles.frame}>
                 <h1> Chọn tệp để in </h1>
                 <div className={styles.upload}>
@@ -119,7 +128,27 @@ function Choose_file() {
                         ))}
                     </tbody>
                 </table>
+                <div className={styles.container}>
+                    <button className={styles.buttonback} onClick={() => navigate("/print")}>Trở lại</button>
+                    <button className={styles.button} onClick={() => navigate("/print")}>Cập nhật</button>
+                    <button className={styles.button} onClick={togglePopup} >
+                        Xoá
+                    </button>
+                    {isOpen && (
 
+                        <div className={styles.delete_box}>
+                            <h2>Xoá máy in</h2>
+                            <p>Bạn chắc chắn muốn xoá máy in?</p>
+                            <button onClick={togglePopup} className={styles.close_popup_btn}>
+                                Huỷ
+                            </button>
+                            <button onClick={togglePopup} className={styles.close_popup_btn}>
+                                Xác nhận
+                            </button>
+                        </div>
+
+                    )}
+                </div>
             </div>
         </>
     )
