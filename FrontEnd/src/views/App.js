@@ -11,6 +11,7 @@ import AddNewPrinter from '../pages/addprinter';
 import Report from '../pages/Report';
 import History_print from '../pages/history_print';
 import Paymore from '../pages/paymore';
+import Bill from '../pages/bill';
 function App() {
 
   return (
