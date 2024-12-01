@@ -12,6 +12,8 @@ import Report from '../pages/Report';
 import History_print from '../pages/history_print';
 import Paymore from '../pages/paymore';
 import Bill from '../pages/bill';
+import ManagePrintFormat from '../pages/ManagePrintFormat';
+import PrinterHistory from '../pages/PrintHistory';
 function App() {
 
   return (
@@ -24,11 +26,13 @@ function App() {
         <Route path="/history" element={<History_print />} />
         <Route path="/paymore" element={<Paymore />} />
         <Route path="/homespso" element={<Main_spso />} />
+        <Route path="/printmanage" element={<ManagePrintFormat />} />
         <Route path="/printermanage" element={<PrinterManage />} />
         <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
         <Route path="/addnewprinter" element={<AddNewPrinter />} />
         <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
         <Route path="/report" element={<Report />} />
+        <Route path="/printhistory/:printerid" element={<InfoPrinter />} />
       </Routes>
     </Router>
   )
