@@ -15,8 +15,6 @@ import Report from '../pages/Report';
 import History_print from '../pages/history_print';
 import Paymore from '../pages/paymore';
 import Bill from '../pages/bill';
-import ManagePrintFormat from '../pages/ManagePrintFormat';
-import PrinterHistory from '../pages/PrintHistory';
 import PrintSettings from '../pages/PrintSettings';
 
 function App() {
