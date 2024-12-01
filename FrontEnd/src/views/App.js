@@ -7,15 +7,12 @@ import Inforstudent from '../pages/InforStudent';
 import PrinterManage from '../pages/printerManage';
 import InfoPrinter from '../pages/InfoPrinter'
 import Choose_file from '../pages/choose_file';
-<<<<<<< HEAD
 import AddPrinter from '../pages/addprinter';
 import ManagePrintFormat from '../pages/ManagePrintFormat';
 import PrinterHistory from '../pages/PrintHistory';
-=======
 import AddNewPrinter from '../pages/addprinter';
 import Report from '../pages/Report';
 import History_print from '../pages/history_print';
->>>>>>> 76c45e7c843fc8fe84e903e808ce9bb4f7d606ea
 function App() {
 
   return (
@@ -29,16 +26,11 @@ function App() {
         <Route path="/homespso" element={<Main_spso />} />
         <Route path="/printermanage" element={<PrinterManage />} />
         <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
-<<<<<<< HEAD
         <Route path="/addnewprinter" element={<AddPrinter />} />
-        <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
         <Route path="/printmanage" element={<ManagePrintFormat />} />
         <Route path="/printhistory/:printerid" element={<PrinterHistory />} />
-=======
         <Route path="/addnewprinter" element={<AddNewPrinter />} />
-        <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
-        <Route path="/" element={<Report />} />
->>>>>>> 76c45e7c843fc8fe84e903e808ce9bb4f7d606ea
+        <Route path="/report" element={<Report />} />
       </Routes>
     </Router>
   )
