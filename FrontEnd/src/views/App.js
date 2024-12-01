@@ -19,7 +19,7 @@ function App() {
         <Route path="/homespso" element={<Main_spso />} />
         <Route path="/printermanage" element={<PrinterManage />} />
         <Route path="/inforprinter/:printerid" element={<InfoPrinter />} /> */}
-        <Route path="/Report" element={<Report />} />
+        <Route path="/" element={<Report />} />
       </Routes>
     </Router>
   )
