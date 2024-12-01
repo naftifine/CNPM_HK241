@@ -1,10 +1,8 @@
 /* Styles for the search bar */
 .search-bar {
     position: absolute;
-    left: 100px +150px;
-    top: 200px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
     max-width: 681px;
@@ -12,6 +10,7 @@
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
+    height: 25px;
 
     /* Input field styles */
     .search-input {
