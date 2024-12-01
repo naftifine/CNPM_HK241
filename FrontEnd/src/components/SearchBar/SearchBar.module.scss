@@ -1,6 +1,5 @@
 /* Styles for the search bar */
 .search_bar {
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -9,7 +8,6 @@
     padding: 5px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: white;
     height: 25px;
 
     /* Input field styles */
