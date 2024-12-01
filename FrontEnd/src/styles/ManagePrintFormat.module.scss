@@ -118,3 +118,65 @@
     margin-top: 160px;
     margin-left: 100px;
 }
+
+.formatbutton {
+    position: absolute;
+    left: 978px;
+    top: 230px;
+    width: 300px;
+    height: 55px;
+    background: #ADD2E0;
+    border: 1px solid #000;
+    border-radius: 15px;
+
+
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000000;
+
+
+    box-sizing: border-box;
+
+    &:hover {
+        background-color: #A4B1B6;
+    }
+}
+
+.pricebutton {
+    position: absolute;
+    left: 680px;
+    top: 230px;
+    width: 250px;
+    height: 55px;
+    background: #ADD2E0;
+    border: 1px solid #000;
+    border-radius: 15px;
+
+
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000000;
+
+
+    box-sizing: border-box;
+
+    &:hover {
+        background-color: #A4B1B6;
+    }
+}

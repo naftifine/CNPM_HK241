@@ -29,79 +29,163 @@
             padding-right: 15px;
         }
     }
+}
 
-    .filterSection {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
+.frame {
+    top: 29+170px;
+    left: 45px;
+    width: 1400px;
+    height: 700px;
+    margin-left: 49px;
+    justify-content: center;
+    position: relative;
+}
 
-        .filterDropdown {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+.frame .All {
+    position: absolute;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 10px;
+    width: 104px;
+    height: 36px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-family: "default", sans-serif;
+    font-weight: 300;
+}
 
-        .searchBar {
-            display: flex;
-            align-items: center;
+.frame .All .icon {
+    position: absolute;
+    left: 90px;
+}
 
-            input {
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
+.frame .choose {
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 23px;
+}
 
-            .filterButton {
-                margin-left: 5px;
-                background-color: #007bff;
-                border: none;
-                color: white;
-                padding: 8px 10px;
-                border-radius: 4px;
-                cursor: pointer;
+.frame .choose p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    width: 100px;
+    height: 36px;
+    border: 1px solid #000;
+    background-color: #fffbfb;
+    margin-bottom: -16px;
 
-                i {
-                    font-size: 16px;
-                }
-            }
-        }
+    &:hover {
+        background-color: #99f4f7;
+    }
+}
+
+.search {
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.frame .sort {
+    margin-left: 860px;
+    margin-top: -30px;
+
+    .icon_sort {
+        font-size: 30px;
     }
 
-    .table {
-        width: 100%;
-        border-collapse: collapse;
+    z-index: 999;
+}
 
-        thead {
-            background-color: #d8f1ff;
+.chooseoption {
+    position: absolute;
+    margin-left: 725px;
+    margin-top: -15px;
+    // background-color: #ffff;
+    z-index: 999;
+}
 
-            th {
-                padding: 10px;
-                text-align: left;
-                font-weight: bold;
-                border: 1px solid #ccc;
-            }
-        }
+.chooseoption p {
+    display: flex;
+    padding-left: 30px;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    border: 1px solid #000;
+    font-size: 20px;
+    margin-bottom: -20px;
+    cursor: pointer;
+    background-color: #ffff;
 
-        tbody {
-            tr {
-                &:nth-child(even) {
-                    background-color: #f9f9f9;
-                }
+    &:hover {
+        background-color: #99f4f7;
+    }
+}
 
-                &:hover {
-                    background-color: #e0f7ff;
-                }
-            }
+.frame .content {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 1244px;
+    cursor: pointer;
 
-            td {
-                padding: 10px;
-                border: 1px solid #ccc;
+    border: 2px solid #000;
 
-                i {
-                    margin-right: 5px;
-                }
-            }
-        }
+    thead {
+        border: 2px solid #000;
+    }
+
+    th,
+    td {
+        z-index: 1;
+        border-bottom: 1px solid #000000;
+        padding: 10px;
+        word-break: break-word;
+    }
+
+    th {
+        background-color: #d8f0ff;
+        color: #000000;
+    }
+
+    .icon_file {
+        padding-right: 10px;
+    }
+}
+
+.button {
+    position: absolute;
+    left: 600px;
+    margin-top: 40px;
+    width: 129px;
+    height: 55px;
+    background: #ADD2E0;
+    border: 1px solid #000;
+    border-radius: 15px;
+
+
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000000;
+
+
+    box-sizing: border-box;
+
+    &:hover {
+        background-color: #A4B1B6;
     }
 }
