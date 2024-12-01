@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-<<<<<<< HEAD
+
 import Hcmut_spso from '../pages/Home';
 import Main_hcmut from '../pages/Main_hcmut';
 import Main_spso from '../pages/Main_spso';
