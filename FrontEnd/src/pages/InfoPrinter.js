@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 
-function AddNewPrinter() {
+function Info() {
     const [isOpen, setIsOpen] = useState(false);
 
     const togglePopup = () => {
@@ -55,7 +55,10 @@ function AddNewPrinter() {
                     <div className={styles.container}>
                         <button className={styles.buttonback} onClick={() => navigate("/printermanage")}>Trở lại</button>
                         <button className={styles.button} onClick={() => navigate("/printermanage")}>Cập nhật</button>
-                        <button className={styles.button} onClick={togglePopup} >
+                        <button className={styles.button} onClick={(e) => {
+                            e.preventDefault(); // Prevent form submission
+                            togglePopup(); // Toggle the popup visibility
+                        }} >
                             Xoá
                         </button>
                         {isOpen && (
@@ -66,7 +69,7 @@ function AddNewPrinter() {
                                 <button onClick={togglePopup} className={styles.close_popup_btn}>
                                     Huỷ
                                 </button>
-                                <button onClick={togglePopup} className={styles.close_popup_btn}>
+                                <button onClick={() => navigate("/printermanage")} className={styles.close_popup_btn}>
                                     Xác nhận
                                 </button>
                             </div>
@@ -78,4 +81,4 @@ function AddNewPrinter() {
         </>
     )
 }
-export default AddNewPrinter;
+export default Info;

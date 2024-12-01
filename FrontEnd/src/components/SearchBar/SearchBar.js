@@ -8,8 +8,7 @@ function SearchBar({ setDisplayText }) {
 
   const handleInputChange = (e) => {
     const value = e.target.value;
-    setSearchValue(value);
-    setDisplayText(value); // Cập nhật dữ liệu lên cha
+    setSearchValue(value);// Cập nhật dữ liệu lên cha
   };
 
   return (

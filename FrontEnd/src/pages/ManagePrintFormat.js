@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../styles/PrinterManage.module.scss'
+import style from '../styles/ManagePrintFormat.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from '../components/SearchBar/SearchBar';
@@ -12,7 +12,7 @@ function PrinterBanner({ printerCode, printerName, printerLocation, printerStatu
     const navigate = useNavigate(); // Hook for navigation
 
     const handleClick = () => {
-        navigate(`/inforprinter/${printerCode}`); // Navigate to the URL with printerCode
+        navigate(`/printhistory/${printerCode}`); // Navigate to the URL with printerCode
     };
     return (
         <div className={style.printer_banner} onClick={handleClick} style={{ cursor: 'pointer' }}>
@@ -33,7 +33,7 @@ function PrinterBanner({ printerCode, printerName, printerLocation, printerStatu
 }
 
 
-function PrinterManage() {
+function ManagePrintFormat() {
     const navigate = useNavigate()
     return (
         <>
@@ -43,20 +43,17 @@ function PrinterManage() {
                 <SearchBar />
             </div>
             <FilterBarTime />
-            <h1 className={style.title}> DANH SÁCH MÁY IN</h1>
+            <h1 className={style.title}> LỊCH SỬ IN ẤN</h1>
             <div className={style.printer_manage} >
                 <PrinterBanner
                     printerCode="555666"
                     printerLocation="Sảnh H6"
                     printerStatus="Sẵn sàng"
                 />
-                <div className={style.containerButton}>
-                    <button className={style.buttonAdd} onClick={() => navigate(`/addnewprinter`)} style={{ cursor: 'pointer' }}>Thêm máy in</button>
-                </div>
             </div>
         </>
 
     );
 }
 
-export default PrinterManage;
+export default ManagePrintFormat;
