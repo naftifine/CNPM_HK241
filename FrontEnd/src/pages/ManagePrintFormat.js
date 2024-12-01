@@ -42,6 +42,13 @@ function ManagePrintFormat() {
             <div className={style.searchbar}>
                 <SearchBar />
             </div>
+            <button /* onClick={(popUp)} */ className={style.formatbutton} >
+                Thiết lập định dạng file
+            </button>
+
+            <button /* onClick={(popUp)} */ className={style.pricebutton} >
+                Chỉnh mệnh giá
+            </button>
             <FilterBarTime />
             <h1 className={style.title}> LỊCH SỬ IN ẤN</h1>
             <div className={style.printer_manage} >
