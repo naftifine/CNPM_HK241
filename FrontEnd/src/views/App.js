@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import Hcmut_spso from '../components/hcmut_spso/hcmut_spso';
 //import Main_hcmut from '../components/HCMUT/Main_hcmut/Main_hcmut';
 //import Main_spso from '../components/SPSO/Main_spso/Main_spso';
-import Infor from '../components/HCMUT/Inforstudent/Infor';
+//import Print from '../pages/printerManage'
+//import Infor from '../components/HCMUT/Inforstudent/Infor';
+import ChooseFile from '../components/HCMUT/choose_file/choose_file';
 function App() {
 
   return (
-    <Infor />
+    <ChooseFile />
   );
 }
 
