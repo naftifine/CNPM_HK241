@@ -1,17 +1,17 @@
-import './Infor.scss';
-import '../NavbarLogin/NavbarLogin'
+import styles from '../styles/InforStudent.module.scss'
+import '../components/Navbar/NavbarStudent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
-import NavbarLogin from '../NavbarLogin/NavbarLogin';
-function Infor() {
+import NavbarStudent from '../components/Navbar/NavbarStudent';
+function Inforstudent() {
     return (
         <>
-            <NavbarLogin />
-            <div className='information'>
-                <h1 className='header'> THÔNG TIN SINH VIÊN</h1>
+            <NavbarStudent />
+            <div className={styles.information}>
+                <h1 className={styles.header}> THÔNG TIN SINH VIÊN</h1>
                 <hr></hr>
-                <a className='icon'><FontAwesomeIcon icon={faCircleUser} style={{ color: "#000000", }} /></a>
-                <table class="content">
+                <a className={styles.icon}><FontAwesomeIcon icon={faCircleUser} style={{ color: "#000000", }} /></a>
+                <table class={styles.content}>
                     <thead>
                         <tr>Họ và tên:</tr>
                         <tr>MSSV:</tr>
@@ -33,4 +33,4 @@ function Infor() {
         </>
     )
 }
-export default Infor;
+export default Inforstudent;

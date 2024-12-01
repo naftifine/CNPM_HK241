@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import styles from './dropdownUsericon.module.scss'
+import styles from './dropdownSPSS.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
-function UserDropdown() {
+function UserDropdownSPSS() {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -30,7 +30,6 @@ function UserDropdown() {
             </button>
             {isOpen && (
                 <div className={styles.dropdown_menu}>
-                    <a href="/profile" >Thông tin</a>
                     <a href="/" >Đăng xuất</a>
                 </div>
             )}
@@ -38,4 +37,4 @@ function UserDropdown() {
     );
 }
 
-export default UserDropdown;
+export default UserDropdownSPSS;

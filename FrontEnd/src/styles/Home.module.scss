@@ -4,6 +4,7 @@ li:nth-child(2) a {
     text-decoration-thickness: 3px;
     text-decoration-color: 0000;
 }
+
 .box {
     position: absolute;
     top: 55%;
@@ -16,6 +17,7 @@ li:nth-child(2) a {
     border-radius: 15px;
     background-color: #c6f4ff;
 }
+
 .box .img {
     position: absolute;
     width: 193.31px;
@@ -23,6 +25,7 @@ li:nth-child(2) a {
     left: calc(50% - 193.31px / 2 - 0.34px);
     top: calc(50% - 199px / 2 - 222.5px);
 }
+
 .content1 {
     position: absolute;
     display: flex;
@@ -39,10 +42,12 @@ li:nth-child(2) a {
     border-radius: 15px;
     background-color: #ffff;
     cursor: pointer;
+
     &:hover {
         background-color: #69d0f6;
     }
 }
+
 .content2 {
     position: absolute;
     display: flex;
@@ -59,6 +64,7 @@ li:nth-child(2) a {
     border-radius: 15px;
     background-color: #ffff;
     cursor: pointer;
+
     &:hover {
         background-color: #69d0f6;
     }

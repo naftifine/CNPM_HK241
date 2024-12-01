@@ -1,7 +1,5 @@
-import './InfoPrinter.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
-import NavbarLogin from '../NavbarLogin/NavbarLogin.js'
+import styles from '../styles/InfoPrinter.module.scss';
+import NavbarLogin from '../components/Navbar/NavbarSPSO.js'
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -18,30 +16,30 @@ function Infor() {
 
         <>
             <NavbarLogin />
-            <div className='information'>
-                <h1 className='header'>THÔNG TIN MÁY IN</h1>
+            <div className={styles.information}>
+                <h1 className={styles.header}>THÔNG TIN MÁY IN</h1>
                 <hr></hr>
-                <div className='content'>
+                <div className={styles.content}>
                     <p>Tên máy: {printerid}</p>
                     <p>Dòng máy:</p>
                     <p>Cơ sở:</p>
                     <p>Trạng thái:</p>
                 </div>
-                <div className="container">
-                    <button className="button" onClick={(navigate("/"))}>Trở lại</button>
-                    <button className="button">Cập nhật</button>
-                    <button className="button" onClick={togglePopup} >
+                <div className={styles.container}>
+                    <button className={styles.buttonback} onClick={() => navigate("/printermanage")}>Trở lại</button>
+                    <button className={styles.button} onClick={() => navigate("/printermanage")}>Cập nhật</button>
+                    <button className={styles.button} onClick={togglePopup} >
                         Xoá
                     </button>
                     {isOpen && (
 
-                        <div className="delete-box">
+                        <div className={styles.delete_box}>
                             <h2>Xoá máy in</h2>
                             <p>Bạn chắc chắn muốn xoá máy in?</p>
-                            <button onClick={togglePopup} className="close-popup-btn">
+                            <button onClick={togglePopup} className={styles.close_popup_btn}>
                                 Huỷ
                             </button>
-                            <button onClick={togglePopup} className="close-popup-btn">
+                            <button onClick={togglePopup} className={styles.close_popup_btn}>
                                 Xác nhận
                             </button>
                         </div>

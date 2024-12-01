@@ -1,10 +1,18 @@
+li:nth-child(3) a {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: 0000;
+}
+
 li:nth-child(2) a {
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 3px;
     text-decoration-color: 0000;
 }
-.home .img {
+
+.homehome .imghome {
     margin-top: 45px;
     padding: 0;
     left: 0;
