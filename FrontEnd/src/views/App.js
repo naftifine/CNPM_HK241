@@ -19,18 +19,19 @@ import PrintSettings from '../pages/PrintSettings';
 import Payment from '../pages/payment';
 import Success from '../pages/success';
 import Fail from '../pages/fail';
-import Login from '../pages/login';
+import LoginSPSO from '../pages/loginSPSO';
+import LoginStudent from '../pages/loginStudent'
 function App() {
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Hcmut_spso />} />
-        <Route path="/homestudent" element={<Login />} />
+        <Route path="/homestudent/home" element={<Main_hcmut />} />
         <Route path="/profile" element={<Inforstudent />} />
         <Route path="/print" element={< Choose_file />} />
         <Route path="/history" element={<History_print />} />
-        <Route path="/homespso" element={<Main_spso />} />
+        <Route path="/homespso/home" element={<Main_spso />} />
         <Route path="/printmanage" element={<ManagePrintFormat />} />
         <Route path="/printermanage" element={<PrinterManage />} />
         <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
@@ -46,6 +47,8 @@ function App() {
         <Route path="/payment/:numpage" element={<Payment />} />
         <Route path="/payment/success" element={<Success />} />
         <Route path="/payment/fail" element={<Fail />} />
+        <Route path="/homestudent" element={<LoginStudent />} />
+        <Route path="/homespso" element={<LoginSPSO />} />
       </Routes>
     </Router>
   )

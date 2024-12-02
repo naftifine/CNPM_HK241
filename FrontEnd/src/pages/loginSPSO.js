@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import style from '../styles/login.module.scss';
 import NavbarLogin from '../components/Navbar/NavbarHome';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function LoginSPSO() {
+    const navigate = useNavigate()
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
@@ -19,6 +21,7 @@ function Login() {
         if (userEmail === 'abc@hcmut.edu.vn' && password === '12345') { // Example credentials
             setMessage('Đăng nhập thành công');
             setMessageStyle('green');
+            navigate(`/homespso/home`)
         } else {
             setMessage('Sai BKNetID hoặc mật khẩu');
             setMessageStyle('red');
@@ -67,4 +70,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default LoginSPSO;
