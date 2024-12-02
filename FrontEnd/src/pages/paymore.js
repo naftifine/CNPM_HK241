@@ -1,7 +1,20 @@
 import style from '../styles/paymore.module.scss'
 import NavbarStudent from '../components/Navbar/NavbarStudent'
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 function Paymore() {
-    let quantity = 1;
+    const navigate = useNavigate()
+    const [numpage, setNumPage] = useState(''); // Giá trị mệnh giá tiền
+
+
+    const handleNumPageUpdate = () => {
+        if (!numpage || isNaN(Number(numpage)) || Number(numpage) <= 0 || Number(numpage) > 40 || !Number.isInteger(Number(numpage))) {
+            alert('Số trang không hợp lệ!');
+            return;
+        }
+        navigate(`/payment/${Number(numpage)}`)
+        setNumPage('');
+    };
     return (
         <>
             <NavbarStudent />
@@ -16,9 +29,10 @@ function Paymore() {
                 <div className={style.count}>
                     <h3>Số lượng giấy muốn mua:</h3>
 
-                    <form action="/update" method="post">
+                    <form>
                         <div>
-                            <input className={style.quantity} type="number" id="quantity" name="quantity" required />
+                            <input className={style.quantity} type="number" id="quantity" name="quantity" required value={numpage}
+                                onChange={(e) => setNumPage(e.target.value)} />
                         </div>
 
                     </form>
@@ -29,7 +43,7 @@ function Paymore() {
                     <p>Mỗi sinh viên sẽ được cấp 40 tờ/tháng.</p>
                     <p>Số lượng giấy được mua tối đa là 40 tờ/lần.</p>
                 </div>
-                <button className={style.btn}>Mua giấy</button>
+                <button className={style.btn} onClick={handleNumPageUpdate}>Mua giấy</button>
             </div>
         </>
 

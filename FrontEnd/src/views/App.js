@@ -16,13 +16,15 @@ import History_print from '../pages/history_print';
 import Paymore from '../pages/paymore';
 import Bill from '../pages/bill';
 import PrintSettings from '../pages/PrintSettings';
-
+import Payment from '../pages/payment';
+import Success from '../pages/success';
+import Fail from '../pages/fail';
 function App() {
 
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Hcmut_spso />} />
+        <Route path="/" element={<Hcmut_spso />} />
         <Route path="/homestudent" element={<Main_hcmut />} />
         <Route path="/profile" element={<Inforstudent />} />
         <Route path="/print" element={< Choose_file />} />
@@ -37,9 +39,12 @@ function App() {
         <Route path="/addnewprinter" element={<AddNewPrinter />} />
         <Route path="/inforprinter/:printerid" element={<InfoPrinter />} />
         <Route path="/report" element={<Report />} />
-        <Route path="/printhistory/:printerid" element={<InfoPrinter />} />
-        <Route path="/report" element={<Report />} /> */}
-        <Route path="/" element={<PrintSettings />} />
+        <Route path="/printsetting/:filename" element={<PrintSettings />} />
+        <Route path="/bill/:filename" element={<Bill />} />
+        <Route path="/paymore" element={<Paymore />} />
+        <Route path="/payment/:numpage" element={<Payment />} />
+        <Route path="/payment/success" element={<Success />} />
+        <Route path="/payment/fail" element={<Fail />} />
       </Routes>
     </Router>
   )

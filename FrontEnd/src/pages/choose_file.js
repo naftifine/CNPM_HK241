@@ -6,7 +6,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import NavbarStudent from '../components/Navbar/NavbarStudent';
 import SearchBar from '../components/SearchBar/SearchBar';
 import Upload from '../components/UploadFile/Uploadfile';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { faBars, faFile, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons'
 function Choose_file() {
@@ -60,7 +60,7 @@ function Choose_file() {
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
-
+    const navigate = useNavigate()
     return (
         <>
             <NavbarStudent />
@@ -123,7 +123,7 @@ function Choose_file() {
                 <table className={styles.content}>
                     <tbody>
                         {files.map((file, index) => (
-                            <tr key={index}>
+                            <tr key={index} onClick={() => navigate(`/printsetting/${file.name}`)}>
                                 <td>
                                     <FontAwesomeIcon className={styles.icon_file} icon={faFile} style={{ color: "#000000" }} />
                                     {file.name}

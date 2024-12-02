@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/payment.module.scss'
 import '../components/Navbar/NavbarStudent'
-import ReactDOM from 'react-dom';
 import { useParams, useNavigate } from 'react-router-dom';
 import QRCode from 'react-qr-code';
 import NavbarStudent from '../components/Navbar/NavbarStudent';
 function Payment() {
     let num = 15;
-    let numpay = 5;
+    const { numpage } = useParams();
     let price = 500;
-    const totalPrice = numpay * price;
+    const totalPrice = numpage * price;
     const navigate = useNavigate();
     const [showQRCode, setShowQRCode] = useState(false);
     const [countdown, setCountdown] = useState(0);
@@ -49,7 +48,7 @@ function Payment() {
                         <tr>H7565</tr>
                         <tr>12:05 PM 22/10/2024</tr>
                         <tr>{price} VNĐ</tr>
-                        <tr>{numpay}</tr>
+                        <tr>{numpage}</tr>
                         <tr>{totalPrice} VNĐ</tr>
 
                     </tbody>

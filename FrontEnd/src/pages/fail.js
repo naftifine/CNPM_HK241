@@ -2,7 +2,7 @@ import styles from '../styles/fail.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import '../components/Navbar/NavbarStudent'
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import NavbarStudent from '../components/Navbar/NavbarStudent';
 function Fail() {
     let numpay = 5;

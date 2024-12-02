@@ -15,6 +15,7 @@ function Bill() {
             navigate("/paymore");
         }
     };
+    const { filename } = useParams();
     return (
         <>
             <NavbarStudent />
@@ -26,7 +27,7 @@ function Bill() {
                     <thead>
                         <tr>Mã số đơn in: </tr>
                         <tr>Thời gian: </tr>
-                        <tr>Tập tin in:</tr>
+                        <tr>Tập tin in: </tr>
                         <tr>Số trang in: </tr>
                         <tr>Địa điểm in: </tr>
 
@@ -34,13 +35,13 @@ function Bill() {
                     <tbody>
                         <tr>H6123</tr>
                         <tr>12:05 PM 22/10/2024</tr>
-                        <tr>L08_BÀI TẬP THUYẾT TRÌNH</tr>
+                        <tr>{filename}</tr>
                         <tr>{numprint}</tr>
                         <tr>H6 - 206</tr>
 
                     </tbody>
                 </table>
-                <button className={styles.return} onClick={() => navigate("/print")}>Trở lại </button>
+                <button className={styles.return} onClick={() => navigate(`/printsetting/${filename}`)}>Trở lại </button>
                 <div className={styles.button}>
                     <button className={styles.print} onClick={handlePrint}>In</button>
                     {showModal && (
