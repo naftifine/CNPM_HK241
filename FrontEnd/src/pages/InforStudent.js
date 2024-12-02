@@ -1,9 +1,19 @@
 import styles from '../styles/InforStudent.module.scss'
 import '../components/Navbar/NavbarStudent'
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import NavbarStudent from '../components/Navbar/NavbarStudent';
 function Inforstudent() {
+    const [info, setInfo] = useState([
+        {
+            name: "Trần Thị Thùy Dương",
+            student_id: 2210626,
+            major: "Khoa học và Kỹ thuật Máy tính",
+            remaining_pages: 100,
+            printed_paper: 50
+        },
+    ]);
     return (
         <>
             <NavbarStudent />
@@ -12,6 +22,7 @@ function Inforstudent() {
                 <hr></hr>
                 <a className={styles.icon}><FontAwesomeIcon icon={faCircleUser} style={{ color: "#000000", }} /></a>
                 <table class={styles.content}>
+
                     <thead>
                         <tr>Họ và tên:</tr>
                         <tr>MSSV:</tr>
@@ -21,12 +32,15 @@ function Inforstudent() {
 
                     </thead>
                     <tbody>
-                        <tr>Nguyễn Văn A</tr>
-                        <tr>2210626</tr>
-                        <tr>Khoa học và Kỹ thuật Máy tính</tr>
-                        <tr>100 trang</tr>
-                        <tr>100 trang</tr>
-
+                        {info.map((info, index) => (
+                            <tr key={index}>
+                                <tr>{info.name}</tr>
+                                <tr>{info.student_id}</tr>
+                                <tr>{info.major}</tr>
+                                <tr>{info.remaining_pages} trang</tr>
+                                <tr>{info.printed_paper} trang</tr>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
