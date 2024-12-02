@@ -1,4 +1,4 @@
-I insert new data for test in mysql:
+I inserted new data for testing in mysql:
 
 INSERT INTO student (student_id, name, major, bknetid, password) 
 
@@ -12,7 +12,7 @@ VALUES
     ('H6P5555', 'ABCD', '1', 'first', 'available', 'Cơ sở 1', 'H1', '116'),
     ('H6P5554', 'ABCE', '1', 'first', 'unavailable', 'Cơ sở 2', 'H6', '112');
 
-When uploading, the documents will save in dir uploads in BackEnd
+When uploading, the documents will be saved at dir uploads in BackEnd.
 
 You should run the server.js in dir Upload_Print: cd Upload_Print -> npm start
 
