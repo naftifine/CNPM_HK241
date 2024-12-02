@@ -1,59 +1,55 @@
+DROP TRIGGER IF EXISTS update_remaining_pages_after_login;
 DELIMITER $$
 
-CREATE TRIGGER update_remaining_pages
-AFTER UPDATE ON student
+CREATE TRIGGER update_remaining_pages_after_login
+BEFORE UPDATE ON student
 FOR EACH ROW
 BEGIN
-    IF NEW.last_login IS NOT NULL THEN
-        DECLARE old_last_login DATE;
-        DECLARE new_last_login DATE;
-        DECLARE default_pages INT;
-        DECLARE remaining_pages INT;
-        DECLARE year_diff INT;
-        DECLARE old_semester INT;
-        DECLARE new_semester INT;
+    DECLARE default_pages INT;
+    DECLARE old_semester INT;
+    DECLARE new_semester INT;
+    DECLARE year_diff INT;
+    DECLARE additional_pages INT;
 
-        SET old_last_login = OLD.last_login;
-        SET new_last_login = NEW.last_login;
+    -- Fetch the default pages value from the system config table
+    SELECT value INTO default_pages FROM system_config WHERE name = 'default_pages';
 
-        IF old_last_login IS NULL THEN
-            UPDATE student
-            SET last_login = new_last_login
-            WHERE student_id = NEW.student_id;
-            RETURN;
-        END IF;
-
-        SELECT default_pages INTO default_pages FROM config;
-
-        IF MONTH(old_last_login) BETWEEN 9 AND 12 THEN
-            SET old_semester = 3;
-        ELSEIF MONTH(old_last_login) BETWEEN 1 AND 4 THEN
-            SET old_semester = 1;
-        ELSEIF MONTH(old_last_login) BETWEEN 5 AND 8 THEN
-            SET old_semester = 2;
-        END IF;
-
-        IF MONTH(new_last_login) BETWEEN 9 AND 12 THEN
-            SET new_semester = 3;
-        ELSEIF MONTH(new_last_login) BETWEEN 1 AND 4 THEN
-            SET new_semester = 1;
-        ELSEIF MONTH(new_last_login) BETWEEN 5 AND 8 THEN
-            SET new_semester = 2;
-        END IF;
-
-        SET year_diff = YEAR(new_last_login) - YEAR(old_last_login);
-
-        SET remaining_pages = (new_semester + year_diff * 3 - old_semester) * default_pages;
-
-        IF remaining_pages < 0 THEN
-            RETURN;
-        END IF;
-
-        UPDATE student
-        SET remaining_pages = remaining_pages + remaining_pages,
-            last_login = new_last_login
-        WHERE student_id = NEW.student_id;
+    -- Ensure the default_pages value is not NULL
+    IF default_pages IS NULL THEN
+        SET default_pages = 0;
     END IF;
+
+    -- Calculate the semester for the last login stored in the login log
+    SET old_semester = CASE
+        WHEN MONTH(NEW.last_login) BETWEEN 9 AND 12 THEN 3
+        WHEN MONTH(NEW.last_login) BETWEEN 1 AND 4 THEN 1
+        WHEN MONTH(NEW.last_login) BETWEEN 5 AND 8 THEN 2
+        ELSE NULL
+    END;
+
+    -- Calculate the semester for the new login (current time)
+    SET new_semester = CASE
+        WHEN MONTH(NEW.last_login) BETWEEN 9 AND 12 THEN 3
+        WHEN MONTH(NEW.last_login) BETWEEN 1 AND 4 THEN 1
+        WHEN MONTH(NEW.last_login) BETWEEN 5 AND 8 THEN 2
+        ELSE NULL
+    END;
+
+    -- Calculate the year difference between the new login and the old login
+    SET year_diff = YEAR(NEW.last_login) - YEAR(OLD.last_login);
+
+    -- Calculate additional pages based on the difference
+    SET additional_pages = (new_semester + (year_diff * 3) - old_semester) * default_pages;
+
+    -- Ensure additional_pages is non-negative
+    IF additional_pages > 0 THEN
+        -- Update the remaining pages for the student
+        SET NEW.remaining_pages = NEW.remaining_pages + additional_pages;
+    END IF;
+
+    -- Optional: Log trigger execution
+    INSERT INTO trigger_log (message)
+    VALUES (CONCAT('Student: ', NEW.student_id, ', Additional Pages: ', additional_pages,', Config: ',year_diff,' ',old_semester,' ',new_semester,' ',default_pages));
 END$$
 
 DELIMITER ;
