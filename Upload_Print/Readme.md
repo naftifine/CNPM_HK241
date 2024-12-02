@@ -10,7 +10,6 @@ INSERT INTO printer (printer_id, brand_name, printer_model, description, status,
 
 VALUES
     ('H6P5555', 'ABCD', '1', 'first', 'available', 'Cơ sở 1', 'H1', '116'),
-    
     ('H6P5554', 'ABCE', '1', 'first', 'unavailable', 'Cơ sở 2', 'H6', '112');
 
 When uploading, the documents will save in dir uploads in BackEnd
