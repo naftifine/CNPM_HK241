@@ -17,33 +17,33 @@
     background-color: #f8fbff;
 }
 
-h1 {
+.loginhcmut h1 {
     font-family: "Arial", sans-serif;
     font-size: 24px;
     margin-bottom: 20px;
     color: #000000;
 }
 
-form {
+.loginhcmut form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-label {
+.loginhcmut label {
     font-size: 14px;
     text-align: left;
     color: #000;
 }
 
-input {
+.loginhcmut input {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-button {
+.loginhcmut button {
     padding: 10px;
     margin-left: 100px;
     width: 150px;
@@ -56,7 +56,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.loginhcmut button:hover {
     background-color: #69d0f6;
 }
 
