@@ -10,13 +10,13 @@ const userRoutes = require('./routes/userRoute');
 const configRoutes = require('./routes/configRoute');
 
 const thirdPartyRoutes = require('./routes/thirdPartyRoute'); 
-
-
+const reportRoute=require('./routes/reportRoute');
+const configPrintRoute=require('./route/configPrintRoute');
 app.use(cors());
-
+app.use('/reports',reportRoute);
 app.get('/login', authRoutes); 
 app.get('/profile', userRoutes);
-
+app.use('/print',configPrintRoute);
 app.put('/config/default-pages', configRoutes);
 app.put('/config/page-price', configRoutes);
 
