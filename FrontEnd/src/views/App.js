@@ -19,13 +19,14 @@ import PrintSettings from '../pages/PrintSettings';
 import Payment from '../pages/payment';
 import Success from '../pages/success';
 import Fail from '../pages/fail';
+import Login from '../pages/login';
 function App() {
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Hcmut_spso />} />
-        <Route path="/homestudent" element={<Main_hcmut />} />
+        <Route path="/homestudent" element={<Login />} />
         <Route path="/profile" element={<Inforstudent />} />
         <Route path="/print" element={< Choose_file />} />
         <Route path="/history" element={<History_print />} />
