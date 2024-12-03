@@ -17,7 +17,7 @@ function LoginStudent() {
             userEmail += '@hcmut.edu.vn';
         }
 
-        if (userEmail === 'abc@hcmut.edu.vn' && password === '12345') { // Example credentials
+        if (userEmail === 'duong.tranduong25@hcmut.edu.vn' && password === '12345') { // Example credentials
             setMessage('Đăng nhập thành công');
             setMessageStyle('green');
             navigate(`/homestudent/home`)
