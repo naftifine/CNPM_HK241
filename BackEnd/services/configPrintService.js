@@ -13,7 +13,7 @@ const configPrintService = {
             };
 
             // Example: HTTP request to the printer (replace with your actual printer API)
-            const response = await axios.post('http://printer-api.local/print', printerPayload);
+            const response = await axios.post('http://localhost:3000/print', printerPayload);
 
             // Assuming the printer API returns a status code or message indicating success
             if (response.status === 200 && response.data.success) {

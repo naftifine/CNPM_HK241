@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/get-qr', (req, res) => {
-  const { userId, amount } = req.body;
+  const { userId, amount } = req.query;
   
   if (pendingUpdates.some(update => update.userId === userId)) {
     return res.status(400).send('QR code request for this user is already pending');
