@@ -75,7 +75,7 @@ function ManagePrintFormat() {
             alert('Mệnh giá không hợp lệ! Vui lòng nhập giá trị hợp lệ.');
             return;
         }
-        alert(`Mệnh giá đã được cập nhật thành: ${Number(moneyValue).toLocaleString()}000 VND`);
+        alert(`Mệnh giá đã được cập nhật thành: ${Number(moneyValue).toLocaleString()}00 VND`);
         setMoneyValue(''); // Reset giá trị input
         setIsMoneyPopupOpen(false); // Đóng popup
     };
@@ -132,7 +132,7 @@ function ManagePrintFormat() {
                         <div className={style.input_container_money}>
                             <input
                                 type="number"
-                                placeholder="Nhập mệnh giá mới (Đơn vị 1000 VND)"
+                                placeholder="Nhập mệnh giá mới (Đơn vị 100 VND)"
                                 value={moneyValue}
                                 onChange={(e) => setMoneyValue(e.target.value)}
                                 className={style.money_input}

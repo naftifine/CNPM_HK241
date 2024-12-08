@@ -10,8 +10,8 @@ function Inforstudent() {
             name: "Trần Thị Thùy Dương",
             student_id: 2210626,
             major: "Khoa học và Kỹ thuật Máy tính",
-            remaining_pages: 100,
-            printed_paper: 50
+            remaining_pages: 50,
+            printed_paper: 15
         },
     ]);
     return (

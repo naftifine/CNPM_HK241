@@ -18,7 +18,7 @@ function LoginSPSO() {
             userEmail += '@hcmut.edu.vn';
         }
 
-        if (userEmail === 'duy.vuduc2210549' && password === '12345') { // Example credentials
+        if (userEmail === 'vuduy123@hcmut.edu.vn' && password === '12345') { // Example credentials
             setMessage('Đăng nhập thành công');
             setMessageStyle('green');
             navigate(`/homespso/home`)

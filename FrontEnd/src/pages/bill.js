@@ -5,8 +5,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import NavbarStudent from '../components/Navbar/NavbarStudent';
 function Bill() {
     const [showModal, setShowModal] = useState(false);
-    const [num, setNum] = useState(7);
-    const numprint = 6;
+    const [num, setNum] = useState(15);
+    const numprint = 16;
     const navigate = useNavigate();
     const handlePrint = () => {
         if (num < numprint) {
@@ -34,7 +34,7 @@ function Bill() {
                     </thead>
                     <tbody>
                         <tr>H6123</tr>
-                        <tr>12:05 PM 22/10/2024</tr>
+                        <tr>{new Date().toLocaleTimeString()} - {new Date().toLocaleDateString()}</tr>
                         <tr>{filename}</tr>
                         <tr>{numprint}</tr>
                         <tr>H6 - 206</tr>

@@ -44,9 +44,9 @@ function App() {
         <Route path="/printsetting/:filename" element={<PrintSettings />} />
         <Route path="/bill/:filename" element={<Bill />} />
         <Route path="/paymore" element={<Paymore />} />
-        <Route path="/payment/:numpage" element={<Payment />} />
-        <Route path="/payment/success" element={<Success />} />
-        <Route path="/payment/fail" element={<Fail />} />
+        <Route path="/payment/:numpage/:num" element={<Payment />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/fail" element={<Fail />} />
         <Route path="/homestudent" element={<LoginStudent />} />
         <Route path="/homespso" element={<LoginSPSO />} />
       </Routes>

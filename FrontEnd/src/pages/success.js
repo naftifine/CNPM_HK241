@@ -1,12 +1,14 @@
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/success.module.scss'
+import { useParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import '../components/Navbar/NavbarStudent'
 import NavbarStudent from '../components/Navbar/NavbarStudent';
 function Success() {
-    let numpay = 5;
+    let numpage = 5;
     let price = 500;
-    const totalPrice = numpay * price;
+    const totalPrice = numpage * price;
     return (
         <>
             <NavbarStudent />
@@ -24,9 +26,9 @@ function Success() {
                     </thead>
                     <tbody>
                         <tr>H7565</tr>
-                        <tr>12:05 PM 22/10/2024</tr>
+                        <tr>{new Date().toLocaleTimeString()} - {new Date().toLocaleDateString()}</tr>
                         <tr>{price} VNĐ</tr>
-                        <tr>{numpay}</tr>
+                        <tr>{numpage}</tr>
                         <tr>{totalPrice} VNĐ</tr>
 
                     </tbody>
